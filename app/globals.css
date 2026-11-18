@@ -2,15 +2,16 @@
 
 :root {
   color-scheme: light dark;
-  --paper: light-dark(#fafaf7, #171c19);
-  --surface: light-dark(#ffffff, #1e2520);
-  --soft: light-dark(#f0f2ec, #262f28);
-  --ink: light-dark(#202b24, #edf2ed);
-  --muted: light-dark(#59665d, #b2bfb5);
-  --line: light-dark(#d6ded5, #435047);
+  --paper: light-dark(#f5f6f1, #151a17);
+  --surface: light-dark(#ffffff, #1c231e);
+  --soft: light-dark(#eef3ec, #27332b);
+  --ink: light-dark(#25332b, #edf2ed);
+  --muted: light-dark(#5e6b62, #b3bfb6);
+  --line: light-dark(#dbe2d8, #3d4b42);
   --action: light-dark(#315c45, #bdd8c5);
+  --action-hover: light-dark(#244b36, #d0e4d5);
   --on-action: light-dark(#ffffff, #15281c);
-  --caution: light-dark(#f7f2e4, #322e22);
+  --caution: light-dark(#f4efdf, #302c20);
   --caution-ink: light-dark(#635021, #e7d7a6);
   --error: light-dark(#a33333, #f1aaaa);
 }
@@ -23,36 +24,49 @@
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-action: var(--action);
+  --color-action-hover: var(--action-hover);
   --color-on-action: var(--on-action);
   --color-caution: var(--caution);
   --color-caution-ink: var(--caution-ink);
   --color-error: var(--error);
-  --font-sans: Arial, Helvetica, sans-serif;
-  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif:
+    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 body {
+  min-height: 100svh;
   background: var(--paper);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
+
+::selection {
+  background: var(--action);
+  color: var(--on-action);
+}
+
 :focus-visible {
   outline: 2px solid var(--action);
   outline-offset: 4px;
 }
+
 h1:focus {
   outline: none;
 }
+
 button,
 input,
 summary {
   -webkit-tap-highlight-color: transparent;
 }
+
 button:not(:disabled),
 summary,
 label:has(input) {
   cursor: pointer;
 }
+
 button:disabled {
   cursor: not-allowed;
 }

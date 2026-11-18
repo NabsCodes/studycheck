@@ -35,7 +35,7 @@ export function LectureNotes({
         <section
           id="lecture-notes"
           aria-labelledby="notes-heading"
-          className="border-line bg-surface mt-3.5 rounded-lg border p-5"
+          className="border-line bg-paper mt-4 rounded-lg border p-5"
         >
           <h2
             id="notes-heading"

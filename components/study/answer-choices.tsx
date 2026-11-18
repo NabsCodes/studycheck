@@ -8,6 +8,7 @@ export function AnswerChoices({
   onChange,
   vertical = false,
   invalid = false,
+  describedBy,
 }: {
   name: string;
   legend: string;
@@ -15,15 +16,20 @@ export function AnswerChoices({
   onChange: (answer: Answer) => void;
   vertical?: boolean;
   invalid?: boolean;
+  describedBy?: string;
 }) {
+  const description = invalid ? "initial-error" : describedBy;
+
   return (
-    <fieldset>
+    <fieldset aria-describedby={description}>
       <legend className="mb-3 text-sm font-medium">{legend}</legend>
-      <div className={`flex gap-2.5 ${vertical ? "flex-col" : "flex-wrap"}`}>
+      <div
+        className={`grid gap-2.5 ${vertical ? "grid-cols-1" : "grid-cols-1 min-[380px]:grid-cols-3"}`}
+      >
         {answerOptions.map((option) => (
           <label
             key={option.value}
-            className="border-line bg-surface has-checked:border-action has-checked:bg-soft flex min-h-12 min-w-22 items-center gap-2.5 rounded-lg border px-3.5 py-2.5 text-sm"
+            className="border-line bg-surface hover:border-action has-checked:border-action has-checked:bg-soft flex min-h-12 items-center gap-2 rounded-lg border px-3 py-3 text-sm transition-colors motion-reduce:transition-none min-[380px]:px-2 sm:px-4"
           >
             <input
               className="accent-action size-4 shrink-0"
@@ -32,7 +38,7 @@ export function AnswerChoices({
               value={option.value}
               checked={value === option.value}
               onChange={() => onChange(option.value)}
-              aria-describedby={invalid ? "initial-error" : undefined}
+              aria-describedby={description}
             />
             <span>{option.label}</span>
           </label>

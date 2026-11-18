@@ -55,9 +55,9 @@ export function SessionReview({
                 →
               </span>
             )}
-            <div className="border-line bg-surface rounded-lg border p-4 sm:p-5">
+            <div className="border-line bg-paper rounded-lg border p-4 sm:p-5">
               <p className="text-muted text-xs">{item.label}</p>
-              <p className="mt-2 font-serif text-2xl">
+              <p className="mt-2 font-serif text-[1.7rem]">
                 {answerLabel(item.value)}
               </p>
             </div>
@@ -95,8 +95,8 @@ export function SessionReview({
         This record shows your choices and note access; it does not show why you
         chose an answer.
       </p>
-      <details className="border-line mt-5 border-t pt-4">
-        <summary className="text-sm font-medium">
+      <details className="border-line mt-5 border-t pt-2">
+        <summary className="min-h-11 py-2.5 text-sm font-medium">
           See the recorded actions
         </summary>
         <ol className="text-muted mt-3 space-y-2 text-xs">

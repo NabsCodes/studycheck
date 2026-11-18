@@ -1,6 +1,6 @@
 # StudyCheck
 
-README prose word count: 525 (headings and body; code blocks, link destinations and this line excluded).
+README prose word count: 591 (headings and body; code blocks, link destinations and this line excluded).
 
 StudyCheck is an IIS coursework interaction prototype based on Nabeel's A1 problem and proposed comparison. Task 01 asks whether a working citation establishes support. A student answers, sees fixed simulated AI advice and a reminder, optionally opens lecture notes, and submits a final answer.
 
@@ -44,7 +44,7 @@ Choose a reminder style, start, select Yes, and save the initial answer. Open th
 
 Next.js App Router provides the page; React manages interaction; TypeScript describes data and state; Tailwind styles the controls. Native HTML controls provide keyboard interaction. pnpm maintains one lockfile. Vitest checks transition rules.
 
-Formatting, lint, types, seven tests and a production build passed on 17 November 2026. Browser checks covered both conditions, empty-answer validation, keyboard operation, notes opening/closing/reopening, retaining Not sure without notes, answer preservation, review records, restart and refresh. Layouts at 390 and 320 pixels had no horizontal overflow. These are developer walkthroughs, not participant findings or a complete accessibility audit.
+Formatting, lint, types, seven tests and a production build passed again on 18 November 2026 after the visual refinements. Browser checks covered both conditions, empty-answer validation, keyboard operation, notes opening/closing/reopening, retaining Not sure without notes, answer preservation, review records, restart and refresh. Layouts at 390 and 320 pixels had no horizontal overflow. These are developer walkthroughs, not participant findings or a complete accessibility audit.
 
 ```bash
 pnpm format:check
@@ -53,6 +53,10 @@ pnpm typecheck
 pnpm test
 pnpm build
 ```
+
+## Visual identity
+
+The source-page mark lives in `app/icon.svg`. The header, browser favicon, PNG icon and Apple touch icon share that design. Run `pnpm icons` after editing the SVG to regenerate the raster files. Next.js supplies their metadata links. Colours and system font stacks are defined in `app/globals.css`; no font service is required. The interface follows the device's light or dark appearance.
 
 ## Development record and AI assistance
 

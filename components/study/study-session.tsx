@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { AnswerChoices } from "@/components/study/answer-choices";
 import { LectureNotes } from "@/components/study/lecture-notes";
@@ -17,10 +18,17 @@ const steps = [
 ];
 
 const headings = {
-  setup: "Choose a reminder style.",
-  initial: "What do you think?",
-  decision: "Compare, then decide.",
-  review: "Here is what happened.",
+  setup: "Set up your session",
+  initial: "Start with your own answer",
+  decision: "Review the advice",
+  review: "Your session review",
+};
+
+const stageLabels = {
+  setup: "Session setup",
+  initial: "Task 01 · your answer first",
+  decision: "Task 01 · advice & decision",
+  review: "Task 01 · session complete",
 };
 
 export function StudySession({ task }: { task: Scenario }) {
@@ -52,25 +60,35 @@ export function StudySession({ task }: { task: Scenario }) {
   }, [showError]);
 
   return (
-    <div className="mx-auto max-w-6xl px-3 py-5 sm:px-6 sm:py-10">
+    <div className="mx-auto max-w-6xl px-3 py-5 sm:px-6 sm:py-10 lg:py-12">
       <a
         href="#task-heading"
         className="sr-only focus:not-sr-only focus:mb-4 focus:inline-block"
       >
         Skip to the task
       </a>
-      <div className="border-line bg-paper overflow-hidden rounded-xl border">
-        <header className="border-line bg-surface flex flex-wrap items-center justify-between gap-4 border-b px-5 py-4 sm:px-7">
+      <div className="border-line bg-surface overflow-hidden rounded-xl border">
+        <header className="border-line flex items-center justify-between gap-4 border-b px-5 py-5 sm:px-8">
           <div className="flex items-center gap-3">
-            <span
-              aria-hidden="true"
-              className="border-action text-action grid size-8 place-items-center rounded-lg border text-xs font-medium"
-            >
-              SC
-            </span>
-            <p className="font-serif text-2xl tracking-tight">StudyCheck</p>
+            <Image
+              src="/icon.svg"
+              width={36}
+              height={36}
+              alt=""
+              unoptimized
+              loading="eager"
+              className="shrink-0"
+            />
+            <div>
+              <p className="font-serif text-[1.4rem] leading-none tracking-tight">
+                StudyCheck
+              </p>
+              <p className="text-muted mt-1.5 text-[11px]">
+                Study with sources
+              </p>
+            </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 sm:gap-6">
             <p className="text-muted hidden text-xs sm:block">
               Task 01 · {task.title}
             </p>
@@ -84,10 +102,10 @@ export function StudySession({ task }: { task: Scenario }) {
             )}
           </div>
         </header>
-        <div className="grid md:grid-cols-[174px_minmax(0,1fr)]">
+        <div className="grid md:grid-cols-[184px_minmax(0,1fr)]">
           <aside
             aria-label="Session progress"
-            className="border-line bg-surface border-b p-4 md:border-r md:border-b-0 md:px-5 md:py-7"
+            className="border-line bg-paper border-b p-4 md:border-r md:border-b-0 md:px-6 md:py-8"
           >
             <p className="text-muted mb-5 hidden text-xs md:block">
               Your session
@@ -102,7 +120,9 @@ export function StudySession({ task }: { task: Scenario }) {
                   <span
                     className={`grid size-6 shrink-0 place-items-center rounded-full border text-xs ${state.stage === step.stage ? "border-action bg-action text-on-action" : currentStep > index ? "border-action text-action" : "border-line"}`}
                   >
-                    {index + 1}
+                    <span aria-hidden="true">
+                      {currentStep > index ? "✓" : index + 1}
+                    </span>
                   </span>
                   <span className="pt-1">{step.label}</span>
                 </li>
@@ -128,19 +148,13 @@ export function StudySession({ task }: { task: Scenario }) {
               </p>
             )}
             <p className="text-muted mb-2 text-xs">
-              {state.stage === "setup"
-                ? "Before the session"
-                : state.stage === "review"
-                  ? "Task 01 · session complete"
-                  : state.stage === "initial"
-                    ? "Task 01 · your answer first"
-                    : "Task 01 · advice & decision"}
+              {stageLabels[state.stage]}
             </p>
             <h1
               ref={headingRef}
               tabIndex={-1}
               id="task-heading"
-              className="font-serif text-[1.75rem] leading-tight tracking-tight sm:text-3xl"
+              className="max-w-xl font-serif text-[1.8rem] leading-tight tracking-tight sm:text-[2.1rem]"
             >
               {headings[state.stage]}
             </h1>
@@ -150,33 +164,35 @@ export function StudySession({ task }: { task: Scenario }) {
                 <p className="text-muted mt-3 text-sm leading-6">
                   Both versions use the same question, advice and lecture notes.
                 </p>
-                <fieldset className="mt-7 space-y-3">
+                <fieldset className="mt-8">
                   <legend className="mb-3 text-sm font-medium">
                     Reminder condition
                   </legend>
-                  {conditions.map((item) => (
-                    <label
-                      key={item.value}
-                      className="border-line bg-surface has-checked:border-action has-checked:bg-soft flex items-start gap-3 rounded-lg border p-4"
-                    >
-                      <input
-                        className="accent-action mt-1 size-4 shrink-0"
-                        type="radio"
-                        name="condition"
-                        value={item.value}
-                        checked={state.condition === item.value}
-                        onChange={() => chooseCondition(item.value)}
-                      />
-                      <span>
-                        <span className="block text-sm font-medium">
-                          {item.label}
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {conditions.map((item) => (
+                      <label
+                        key={item.value}
+                        className="border-line bg-surface hover:border-action has-checked:border-action has-checked:bg-soft flex items-start gap-3 rounded-lg border p-4 transition-colors motion-reduce:transition-none sm:min-h-32 sm:p-5"
+                      >
+                        <input
+                          className="accent-action mt-1 size-4 shrink-0"
+                          type="radio"
+                          name="condition"
+                          value={item.value}
+                          checked={state.condition === item.value}
+                          onChange={() => chooseCondition(item.value)}
+                        />
+                        <span>
+                          <span className="block text-sm font-medium">
+                            {item.label}
+                          </span>
+                          <span className="text-muted mt-1 block text-xs leading-6">
+                            {item.description}
+                          </span>
                         </span>
-                        <span className="text-muted mt-1 block text-xs leading-6">
-                          {item.description}
-                        </span>
-                      </span>
-                    </label>
-                  ))}
+                      </label>
+                    ))}
+                  </div>
                 </fieldset>
                 <Button variant="primary" className="mt-6" onClick={start}>
                   Start session <span aria-hidden="true">→</span>
@@ -184,7 +200,7 @@ export function StudySession({ task }: { task: Scenario }) {
                 <ul className="border-line text-muted mt-7 flex flex-wrap gap-x-5 gap-y-2 border-t pt-4 text-xs">
                   <li>One fixed task</li>
                   <li>Optional lecture notes</li>
-                  <li>No live AI model</li>
+                  <li>Simulated AI advice</li>
                 </ul>
                 <p className="text-muted mt-4 text-xs leading-6">
                   This setup is separate from the student task. The reminder
@@ -194,7 +210,9 @@ export function StudySession({ task }: { task: Scenario }) {
             )}
 
             {(state.stage === "initial" || state.stage === "decision") && (
-              <p className="mt-6 text-lg leading-8">{task.question}</p>
+              <p className="mt-6 max-w-2xl text-lg leading-8">
+                {task.question}
+              </p>
             )}
 
             {state.stage === "initial" && (
@@ -262,7 +280,7 @@ export function StudySession({ task }: { task: Scenario }) {
                     <p className="text-sm leading-7">{task.advice}</p>
                     <aside
                       aria-labelledby="reminder-heading"
-                      className="bg-caution text-caution-ink mt-5 min-h-40 rounded-lg p-4"
+                      className="bg-caution text-caution-ink mt-5 min-h-40 rounded-lg p-4 sm:p-5"
                     >
                       <h3 id="reminder-heading" className="text-sm font-medium">
                         Reliability reminder
@@ -298,6 +316,7 @@ export function StudySession({ task }: { task: Scenario }) {
                       value={state.finalDraft}
                       onChange={selectFinal}
                       vertical
+                      describedBy="final-help"
                     />
                     <Button
                       type="submit"
@@ -322,8 +341,8 @@ export function StudySession({ task }: { task: Scenario }) {
                 <SessionReview state={state} task={task} onRestart={restart} />
               </>
             )}
-            <footer className="border-line text-muted mt-8 flex flex-wrap justify-between gap-x-5 gap-y-2 border-t pt-4 text-[11px] leading-6">
-              <p>StudyCheck · fixed simulated advice and warnings</p>
+            <footer className="border-line text-muted mt-9 flex flex-wrap justify-between gap-x-5 gap-y-2 border-t pt-4 text-xs leading-6">
+              <p>Local study session</p>
               <p>Restarting or reloading clears this session.</p>
             </footer>
           </main>
