@@ -1,50 +1,65 @@
 # StudyCheck
 
-README prose word count: 661 (headings and body; code blocks, link destinations and this line excluded).
+README prose word count: 891 (headings and body; code blocks, link destinations and this line excluded).
 
-StudyCheck is an IIS coursework interaction prototype based on Nabeel's A1 problem and proposed comparison. Task 01 asks whether a working citation establishes support. A student answers, sees fixed simulated AI advice and a reminder, optionally opens lecture notes, and submits a final answer.
+**Author: Hassan Umar Hassan** · MSc Intelligent Interactive Systems · University of Birmingham
 
-## Current status
+StudyCheck explores how students check AI study advice against course material while keeping control of their own answer. It develops the interaction proposed in A1, _Uncertainty Messages and Students' Verification of AI Study Answers_, into an inspectable A2 prototype.
 
-Task 01 works locally with both general and claim-specific reminder conditions. The student can commit an initial answer, view fixed advice, optionally consult notes, submit a final choice and inspect the factual review. The advice and claim flag are hand-authored simulations, not a live model or error detector. No user study has been conducted. Nabeel's first application walkthrough is pending.
+![StudyCheck session setup, developer screenshot from 19 November 2026](docs/images/session-setup.jpg)
 
-Accounts, databases, analytics, uploads, persistence and other tasks are outside this milestone. Refresh or restart discards the current session. The original lecture link requires university access; the adapted notes work locally.
+## What works now
 
-## Run
+Task 01 is a complete local interaction: choose a reminder condition, answer independently, inspect advice, optionally consult lecture notes, submit a final answer and review the recorded actions. General and claim-specific conditions share the same question, advice, notes and controls; only warning wording changes. The condition stays locked during a session, and the initial answer is preserved.
 
-Use Node.js 22.13 or newer and pnpm 10.2.0. The current development machine uses Node 26.8.2.
+AI advice and claim flagging are fixed, authored simulations. There is no live model, retrieval pipeline or automatic error detector. The application handles the actual interaction and records; it does not estimate what a student knows.
+
+Correct-advice and misleading-warning examples, the assessment diagram, illustrated storyboards and report remain unfinished. No participant study has been conducted. The repository has not been published, and no final submission commit or release has been designated. An online deployment is not needed to inspect this version.
+
+## Run locally
+
+Requires Node.js 22.13 or newer and pnpm 10.2.0. Download or clone the repository, then open a terminal in its root folder. If pnpm is missing, install it with `npm install --global pnpm@10.2.0`.
 
 ```bash
-pnpm install
-pnpm dev
+pnpm install --frozen-lockfile
+pnpm dev --hostname 127.0.0.1
 ```
 
-Open the local URL printed by Next.js, normally <http://localhost:3000>. No service credentials are needed. To run a production build locally:
+Open the local URL printed in the terminal, normally <http://127.0.0.1:3000>. If that port is occupied, follow the printed URL. Stop the server with Ctrl+C. For a production preview:
 
 ```bash
 pnpm build
-pnpm start
+pnpm start --hostname 127.0.0.1
 ```
 
-## Try the interaction
+No API keys, environment file or service account are required. Internet access is needed to install dependencies and fetch Geist through `next/font/google` during compilation. The browser receives the font from this app. The original lecture link requires university access; the adapted notes are available locally.
 
-Choose a reminder style, start, select Yes, and save the initial answer. Open the notes, choose No and submit. The review should preserve the initial Yes and show note access. Restart to try Not sure with the other reminder, then submit without opening notes. These are walkthrough instructions, not experimental results.
+## Try Task 01
 
-## Main files
+1. Select **General reminder** and start the session.
+2. Select **Yes**, then save the initial answer. The simulated advice appears and recommends Yes.
+3. Open the lecture notes. Compare the claim with the notes, then select **No** and submit.
+4. Check that the review preserves Yes as the initial answer, shows No as the final answer and records notes access. Expand **See the recorded actions** to inspect the sequence.
+5. Restart, select **Claim-specific message**, choose **Not sure** and continue. Submit without opening notes. The review should preserve Not sure and show no notes access.
 
-- `app/page.tsx` composes the study feature; `app/layout.tsx` and `app/globals.css` define metadata and the visual foundations.
-- `content/scenarios.ts` holds the exact question, advice, both reminders, notes, expected answer and source provenance.
-- `hooks/use-study-session.ts` connects browser actions and post-render presentation events to React state.
-- `lib/study-session.ts` defines pure transitions, guards and factual event helpers.
-- `types/study.ts` describes allowed stages, answers and events.
-- `components/study/` presents the screens; `components/ui/button.tsx` is the shared button.
-- `tests/study-session.test.ts` checks answer preservation, condition locking, optional note access, duplicate actions and reset isolation.
+Submitting without an initial choice displays an error. Final selection initially matches the first answer and requires explicit submission. Restart or refresh clears the session. Replaying a revealed question demonstrates behaviour; it is not an independent experimental comparison.
 
-## Stack and checks
+## How it is organised
 
-Next.js App Router provides the page; React manages interaction; TypeScript describes data and state; Tailwind styles the controls. Native HTML controls provide keyboard interaction. pnpm maintains one lockfile. Vitest checks transition rules.
+Next.js App Router provides the page and font/icon assets. React manages the interaction; TypeScript describes valid stages, answers and events. Tailwind styles the interface. Native radios and buttons provide the controls. pnpm pins dependencies; Vitest checks transition rules.
 
-Formatting, lint, types, seven tests and a production build passed again on 19 November 2026 after the focus and typography changes. Browser checks covered both conditions, empty-answer validation, keyboard operation, notes opening/closing/reopening, retaining Not sure without notes, answer preservation, review records, restart and refresh. Layouts at 390 and 320 pixels had no horizontal overflow. These are developer walkthroughs, not participant findings or a complete accessibility audit.
+- [`app/page.tsx`](app/page.tsx) composes the client study feature.
+- [`components/study/`](components/study/) presents setup, answers, notes and review.
+- [`content/scenarios.ts`](content/scenarios.ts) holds the versioned question, advice, warnings, notes and answer key.
+- [`hooks/use-study-session.ts`](hooks/use-study-session.ts) connects actions and post-render presentation events to the reducer.
+- [`lib/study-session.ts`](lib/study-session.ts) guards transitions and preserves factual records; [`types/study.ts`](types/study.ts) defines the state shapes.
+- [`tests/study-session.test.ts`](tests/study-session.test.ts) checks preservation, condition locking, optional notes, duplicate/stale events and restart isolation.
+
+The review uses state and events, rather than generated judgements. Records include condition, task/content versions, initial and final answers, and elapsed action times. They stay in browser memory; there is no database, analytics, persistence or export. Notes access does not establish reading or understanding, and answer changes do not establish learning or the warning's effectiveness.
+
+## Checks and development evidence
+
+Formatting, ESLint, types, seven tests and the production build passed on 19 November 2026. Browser walkthroughs recorded in the development log cover both conditions, validation, keyboard/focus behaviour, notes, review and reset. Narrow-screen checks included 390 and 320 pixels. These are developer checks, not participant findings or complete accessibility certification.
 
 ```bash
 pnpm format:check
@@ -54,14 +69,14 @@ pnpm test
 pnpm build
 ```
 
-## Visual identity
+The [development record](docs/development-record.md) explains significant changes, reasons, failures and checks. Existing history includes `13fb206` for the first complete task, `ffd4525` for identity/interface refinement, and `fd7d9bc` for font/editor refinements. These are development milestones, not a designated submission version.
 
-The source-page mark lives in `app/icon.svg`. The header, browser favicon, PNG icon and Apple touch icon share that design. Run `pnpm icons` after editing the SVG to regenerate the raster files. Next.js supplies their metadata links. Geist is loaded through `next/font/google` with a Latin subset and served with the app. Next.js downloads the font at build time; the browser does not call Google Fonts. Font loading is defined in `app/layout.tsx`, with type and colour tokens in `app/globals.css`. The interface follows the device's light or dark appearance.
+ESLint and Prettier are the project tools. Workspace settings disable the Biome editor extension; `biome.json` retains Tailwind parser support for other callers. If an old CSS diagnostic remains, reload the editor window. The icon source is [`app/icon.svg`](app/icon.svg); `pnpm icons` regenerates its raster exports.
 
-ESLint and Prettier are the project linting and formatting tools. Workspace settings disable the Biome editor extension, matching the existing Dikko project. `biome.json` also enables Tailwind directive parsing for tools that still run Biome.
+## Sources, authorship and AI assistance
 
-## Development record and AI assistance
+Hassan selected the topic and approved the flow and local project location. Codex assisted with source review, task wording, wireframing, scaffolding, implementation, debugging, documentation and checks. For example, the original focus effect was replaced with a keyed heading/callback ref while preserving stage focus. Hassan rejected the package-based font approach; it was replaced with Geist through standard Next.js font loading. The development record distinguishes requested decisions, adaptations and actual verification; no full prompt log is included.
 
-The [development record](docs/development-record.md) connects changes with decisions and actual checks. [Task notes](docs/task-01.md) explain provenance, simulation boundaries and limitations. Nabeel selected the task and approved the wireframe and local project location. Codex assisted with source review, planning, the wireframe, scaffolding, implementation and checks. This milestone adapts the approved content and wireframe; corrections and rejected suggestions are recorded as they occur. No full prompt log is included.
+Task 01's notes paraphrase `W04_L11_Retrieval_Grounding_and_Provenance.pdf`, PDF pages 5, 8 and 10. [Task notes](docs/task-01.md) explain the evidence and methodological limits, with a link to the original lecture. The PDF is not redistributed.
 
-The structure draws on read-only reviews of Nabeel's existing projects, especially Dikko & Mahmoud, Party Gift Pass, Vextra and WardWise. Their business workflows and integrations are not copied. The short course notes are an attributed paraphrase; the lecture PDF is not redistributed here. This repository has not been published. Diagram, storyboard and report preparation follow Nabeel trying this first interaction.
+Hassan's Dikko & Mahmoud, Party Gift Pass, Vextra and WardWise projects informed organisation, stage handling, feedback and progress. Their business code and assets were not copied. The source-page icon was created for StudyCheck with Codex assistance. The setup image above is a developer screenshot, not participant evidence.

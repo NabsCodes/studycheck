@@ -1,0 +1,12 @@
+---
+description: Keep StudyCheck documentation accurate at every development stage
+alwaysApply: true
+---
+
+# Documentation upkeep
+
+- After each meaningful development stage, update `README.md` and `docs/development-record.md` before reporting completion.
+- Keep working, simulated and unfinished behaviour explicit. Update setup, walkthroughs, screenshots and file links when affected.
+- Record significant decisions, AI-assisted adaptations and checks actually performed. Preserve dated history; do not invent results or label old checks as new.
+- Recalculate the README prose word count after prose edits, verify affected relative links and run the documentation formatting check.
+- Before final submission, reconcile README, report, diagram and storyboards with the implemented version, and add the real repository/README links and submitted commit or release once designated.

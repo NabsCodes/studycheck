@@ -2,7 +2,7 @@
 
 ## 17 November 2026: local foundation
 
-- Nabeel approved the full-flow wireframe, then chose a fresh local project at `/Users/nabeelhassan/Desktop/studycheck`, outside OneDrive. The application milestone is one Task 01 interaction. No remote repository or publication is authorised for this milestone.
+- Hassan approved the full-flow wireframe, then chose a fresh local project at `/Users/nabeelhassan/Desktop/studycheck`, outside OneDrive. The application milestone is one Task 01 interaction. No remote repository or publication is authorised for this milestone.
 - Created the project directory and initialised a local Git repository on `main`. No pre-existing StudyCheck code was present at this path.
 - Chose Next.js App Router, React, TypeScript, Tailwind and pnpm, matching the agreed conventions. Current registry versions checked: Next.js 16.4.6, React 19.3.1, Tailwind 4.3.5 and Vitest 5.1.0. The local tools report Node 26.8.2 and pnpm 10.2.0.
 - Used manual Next.js setup to avoid unrelated starter screens, fonts or services. A page will compose a client study-session feature, with typed content and pure transition logic. Native radios/buttons suffice for this milestone.
@@ -22,11 +22,11 @@
 - Keyboard checks used Space for radio choice, an arrow key to change the final radio, and Enter for actions. Missing initial choice focused the visible error; stage changes focused the heading; closing the notes from its bottom button returned focus to its opener. These checks do not establish complete accessibility conformance.
 - Inspected desktop layout and mobile notes/review at 390 and 320 pixels. At those mobile widths, document scroll width equalled viewport width. Reload returned to setup with no previous session. The screenshot is a developer inspection, not a participant result.
 - `next dev` generated its version-specific `AGENTS.md`; read the file and retained it. The corresponding bundled Next.js client-component and CSS guides were read during setup.
-- The local development server is available at `http://127.0.0.1:3100`. A local milestone commit follows these checks; no remote, deployment or publication was created. Nabeel's own walkthrough and judgement are the next step. Remaining examples, assessment diagram/storyboards and report are not implemented in this milestone.
+- The local development server is available at `http://127.0.0.1:3100`. A local milestone commit follows these checks; no remote, deployment or publication was created. Hassan's own walkthrough and judgement are the next step. Remaining examples, assessment diagram/storyboards and report are not implemented in this milestone.
 
 ## 18 November 2026: visual identity and interface refinement
 
-- Nabeel requested favicons and a more considered application finish, drawing on his Desktop projects. Reviewed Dikko & Mahmoud, Vextra and Party Gift Pass references read-only. Applied restrained typography, spacing and control hierarchy; no reference project's code or business assets were copied.
+- Hassan requested favicons and a more considered application finish, drawing on his Desktop projects. Reviewed Dikko & Mahmoud, Vextra and Party Gift Pass references read-only. Applied restrained typography, spacing and control hierarchy; no reference project's code or business assets were copied.
 - Created an original folded-source-page/check SVG used by the header and automatic Next.js icon metadata. Added generated 192-pixel PNG, 180-pixel Apple touch icon and an ICO containing 16, 32 and 48-pixel PNG entries. `scripts/generate-icons.mjs` and `pnpm icons` reproduce the exports from the SVG using the pinned Sharp development dependency. Verified dimensions, ICO entry boundaries and PNG signatures; favicon, SVG and Apple icon routes returned HTTP 200 locally.
 - Refined the green/neutral palette for light and dark appearance, system font stacks, serif headings, setup choice cards, progress markers, button feedback, answer controls, notes and review spacing. Updated the page title, application name and per-appearance browser theme colours. No remote font service or decorative asset library was added. Hid the Next.js development indicator through its documented configuration; build/type/error checks remain enabled.
 - Added an associated description for the final-answer fieldset and radios. At small widths the initial answer choices stack rather than squeezing three labels into one row. Native radio semantics, keyboard operation and focus styling remain in place.
@@ -38,7 +38,7 @@
 
 ## 19 November 2026: editor diagnostics and typography
 
-- Nabeel reported Biome's unnecessary `state.stage` dependency warning and disabled Tailwind syntax parser error, and requested different fonts. Reproduced both errors with `pnpm dlx @biomejs/biome@2.6.8 lint --only=correctness/useExhaustiveDependencies components/study/study-session.tsx app/globals.css` before editing.
+- Hassan reported Biome's unnecessary `state.stage` dependency warning and disabled Tailwind syntax parser error, and requested different fonts. Reproduced both errors with `pnpm dlx @biomejs/biome@2.6.8 lint --only=correctness/useExhaustiveDependencies components/study/study-session.tsx app/globals.css` before editing.
 - Replaced the stage-triggered focus effect with a stable callback ref on a heading keyed by the session stage. A stage change mounts and focuses that heading; ordinary answer/notes updates retain it and do not refocus it. This preserves the intended keyboard behaviour without suppressing the rule or removing the stage-change behaviour. The validation focus effect is unchanged.
 - Added `biome.json` enabling `css.parser.tailwindDirectives`, as specified by Biome's configuration documentation. Kept lint rules active. Disabled only its formatter and import assists because Prettier and ESLint already serve those project roles. The focused diagnostic command and a full Biome lint of the two reported files both passed afterwards.
 - Installed pinned Fontsource variable packages for Source Sans 3 and Source Serif 4 (5.3.1). Used the Latin normal WOFF2 files with `next/font/local`, explicit variable weight ranges, swap loading and fallback faces. The font licence files remain in their packages. The app serves its own font assets and needs no runtime Google Fonts request. Read the shipped Next.js font guide before implementation.
@@ -47,6 +47,18 @@
 
 ## 19 November 2026: simpler font and editor setup
 
-- Nabeel reported the CSS editor diagnostic still visible and clarified that he wanted the standard Next.js font approach with only minor polish. Replaced the Fontsource/local-font solution with one Geist family through `next/font/google`, matching Vextra's font-loading convention. Removed the two unused Fontsource dependencies and serif styling. Next.js downloads the font during a build and serves it from the app.
+- Hassan reported the CSS editor diagnostic still visible and clarified that he wanted the standard Next.js font approach with only minor polish. Replaced the Fontsource/local-font solution with one Geist family through `next/font/google`, matching Vextra's font-loading convention. Removed the two unused Fontsource dependencies and serif styling. Next.js downloads the font during a build and serves it from the app.
 - Read Dikko's project settings and confirmed it disables the Biome extension while using ESLint and Prettier. Applied the same project-local choice in `.vscode/settings.json`; no global editor settings changed. Retained Tailwind parser support in the Biome configuration for other callers and used the 2.5.3 schema already used by the reference projects. A stale editor diagnostic may require reloading the editor window; direct lint verification cannot establish whether an already-running editor has refreshed its diagnostics.
 - ESLint, types, all seven tests and the production build passed after the changes. Inspected the refreshed production preview and confirmed Geist in the computed body/heading font families. Updated the README to describe the final implementation; the previous local-font entry above records the superseded approach. Task wording and interaction scope were unchanged.
+
+## 19 November 2026: README and author details
+
+- Hassan requested a README suitable for repository inspection and clarified his full name as Hassan Umar Hassan, with Hassan preferred in prose. Added the full author name to the README and normalised the name in project notes. Existing filesystem paths remain unchanged. Recommended keeping the student ID in the report/submission details rather than the public-facing README; no ID was added here.
+- Reworked the README around actual Task 01 status, reproducible setup, two inspection walkthroughs, technology roles, code locations, recorded checks and significant commits. Distinguished implemented interaction from simulated advice/claim flags and unfinished examples, diagram, storyboards and report. No submission commit was invented and no repository was published.
+- Added the existing 19 November developer screenshot to `docs/images/session-setup.jpg` and linked it from the README. Clarified AI contributions, adaptations, source paraphrase, reference-project influences and the limits of session records. The README links to this detailed record and the task provenance notes.
+- Documentation-only change: no application code or task content changed. Checked README relative links, image readability, script names and the prose word count, then checked formatting and whitespace. The previously recorded runtime checks are dated evidence, not a fresh clean-install or participant study claim.
+
+## 19 November 2026: continuing documentation agreement
+
+- Hassan requested that the README keep being updated through every remaining stage until completion. Recorded an always-applicable project rule and linked it from AGENTS.md so later development sessions retain the instruction.
+- Documentation updates must track actual status, affected instructions/evidence and performed checks, refresh the prose word count and links, and reconcile the final submission materials. This agreement does not authorise publication or invent a submission version.

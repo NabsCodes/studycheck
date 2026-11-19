@@ -2,9 +2,9 @@
 
 ## Foundation
 
-Nabeel's submitted A1, _Uncertainty Messages and Students' Verification of AI Study Answers_, distinguishes following AI advice, accessing sources and correcting errors. It proposes comparing general reminders with claim-specific uncertainty messages. A2 develops an inspectable prototype of that interaction; it has not conducted that empirical comparison.
+Hassan's submitted A1, _Uncertainty Messages and Students' Verification of AI Study Answers_, distinguishes following AI advice, accessing sources and correcting errors. It proposes comparing general reminders with claim-specific uncertainty messages. A2 develops an inspectable prototype of that interaction; it has not conducted that empirical comparison.
 
-The handoff and accessible assignment/documents provided the foundation. The original prior conversation was not assumed accessible. Nabeel approved the proposed full-flow wireframe and selected a local Desktop project outside OneDrive. The detailed planning documents remain in the IIS chat workspace; this file records the implementation-relevant decisions.
+The handoff and accessible assignment/documents provided the foundation. The original prior conversation was not assumed accessible. Hassan approved the proposed full-flow wireframe and selected a local Desktop project outside OneDrive. The detailed planning documents remain in the IIS chat workspace; this file records the implementation-relevant decisions.
 
 ## Task content and provenance
 
@@ -34,7 +34,7 @@ One session exists in browser memory. It stores version identifiers, condition, 
 
 Opening notes does not establish reading or comprehension. Agreement with the AI recommendation is not a complete reliance measure. A changed answer is not necessarily corrected; a correct answer after note access does not show what caused it, identify the student's reasoning or demonstrate learning. Elapsed time is not active study time. No participant observations, task difficulty results or effectiveness findings have been invented.
 
-Replaying the same question reveals its answer and is useful for inspection, not independent experimental comparison. Remaining correct-advice and misleading-warning cases are future work after Nabeel tries this milestone. Selected cases cannot estimate detector accuracy or warning-fatigue effects. Newly used primary-paper claims need original-source verification; the A1 papers were not freshly rechecked during implementation.
+Replaying the same question reveals its answer and is useful for inspection, not independent experimental comparison. Remaining correct-advice and misleading-warning cases are future work after Hassan tries this milestone. Selected cases cannot estimate detector accuracy or warning-fatigue effects. Newly used primary-paper claims need original-source verification; the A1 papers were not freshly rechecked during implementation.
 
 ## Design connections
 
