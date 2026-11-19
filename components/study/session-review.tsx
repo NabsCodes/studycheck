@@ -57,7 +57,7 @@ export function SessionReview({
             )}
             <div className="border-line bg-paper rounded-lg border p-4 sm:p-5">
               <p className="text-muted text-xs">{item.label}</p>
-              <p className="mt-2 font-serif text-[1.7rem]">
+              <p className="mt-2 font-sans text-[1.7rem]">
                 {answerLabel(item.value)}
               </p>
             </div>

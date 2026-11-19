@@ -1,6 +1,6 @@
 # StudyCheck
 
-README prose word count: 591 (headings and body; code blocks, link destinations and this line excluded).
+README prose word count: 661 (headings and body; code blocks, link destinations and this line excluded).
 
 StudyCheck is an IIS coursework interaction prototype based on Nabeel's A1 problem and proposed comparison. Task 01 asks whether a working citation establishes support. A student answers, sees fixed simulated AI advice and a reminder, optionally opens lecture notes, and submits a final answer.
 
@@ -19,7 +19,7 @@ pnpm install
 pnpm dev
 ```
 
-Open <http://127.0.0.1:3100>. No service credentials are needed. To run a production build locally:
+Open the local URL printed by Next.js, normally <http://localhost:3000>. No service credentials are needed. To run a production build locally:
 
 ```bash
 pnpm build
@@ -44,7 +44,7 @@ Choose a reminder style, start, select Yes, and save the initial answer. Open th
 
 Next.js App Router provides the page; React manages interaction; TypeScript describes data and state; Tailwind styles the controls. Native HTML controls provide keyboard interaction. pnpm maintains one lockfile. Vitest checks transition rules.
 
-Formatting, lint, types, seven tests and a production build passed again on 18 November 2026 after the visual refinements. Browser checks covered both conditions, empty-answer validation, keyboard operation, notes opening/closing/reopening, retaining Not sure without notes, answer preservation, review records, restart and refresh. Layouts at 390 and 320 pixels had no horizontal overflow. These are developer walkthroughs, not participant findings or a complete accessibility audit.
+Formatting, lint, types, seven tests and a production build passed again on 19 November 2026 after the focus and typography changes. Browser checks covered both conditions, empty-answer validation, keyboard operation, notes opening/closing/reopening, retaining Not sure without notes, answer preservation, review records, restart and refresh. Layouts at 390 and 320 pixels had no horizontal overflow. These are developer walkthroughs, not participant findings or a complete accessibility audit.
 
 ```bash
 pnpm format:check
@@ -56,7 +56,9 @@ pnpm build
 
 ## Visual identity
 
-The source-page mark lives in `app/icon.svg`. The header, browser favicon, PNG icon and Apple touch icon share that design. Run `pnpm icons` after editing the SVG to regenerate the raster files. Next.js supplies their metadata links. Colours and system font stacks are defined in `app/globals.css`; no font service is required. The interface follows the device's light or dark appearance.
+The source-page mark lives in `app/icon.svg`. The header, browser favicon, PNG icon and Apple touch icon share that design. Run `pnpm icons` after editing the SVG to regenerate the raster files. Next.js supplies their metadata links. Geist is loaded through `next/font/google` with a Latin subset and served with the app. Next.js downloads the font at build time; the browser does not call Google Fonts. Font loading is defined in `app/layout.tsx`, with type and colour tokens in `app/globals.css`. The interface follows the device's light or dark appearance.
+
+ESLint and Prettier are the project linting and formatting tools. Workspace settings disable the Biome editor extension, matching the existing Dikko project. `biome.json` also enables Tailwind directive parsing for tools that still run Biome.
 
 ## Development record and AI assistance
 

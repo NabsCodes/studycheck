@@ -29,9 +29,7 @@
   --color-caution: var(--caution);
   --color-caution-ink: var(--caution-ink);
   --color-error: var(--error);
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif:
-    "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-sans: var(--font-geist), Arial, sans-serif;
 }
 
 body {

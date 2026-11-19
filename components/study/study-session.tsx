@@ -31,6 +31,11 @@ const stageLabels = {
   review: "Task 01 · session complete",
 };
 
+// A new keyed heading mounts for each stage, so focus follows screen changes.
+function focusStageHeading(element: HTMLHeadingElement | null) {
+  element?.focus();
+}
+
 export function StudySession({ task }: { task: Scenario }) {
   const {
     state,
@@ -43,7 +48,6 @@ export function StudySession({ task }: { task: Scenario }) {
     submitFinal,
     restart,
   } = useStudySession(task);
-  const headingRef = useRef<HTMLHeadingElement>(null);
   const notesButtonRef = useRef<HTMLButtonElement>(null);
   const errorRef = useRef<HTMLParagraphElement>(null);
   const currentStep = steps.findIndex((step) => step.stage === state.stage);
@@ -52,9 +56,6 @@ export function StudySession({ task }: { task: Scenario }) {
   )?.label;
   const showError = state.stage === "initial" && state.showError;
 
-  useEffect(() => {
-    headingRef.current?.focus();
-  }, [state.stage]);
   useEffect(() => {
     if (showError) errorRef.current?.focus();
   }, [showError]);
@@ -80,7 +81,7 @@ export function StudySession({ task }: { task: Scenario }) {
               className="shrink-0"
             />
             <div>
-              <p className="font-serif text-[1.4rem] leading-none tracking-tight">
+              <p className="font-sans text-[1.4rem] leading-none font-semibold tracking-tight">
                 StudyCheck
               </p>
               <p className="text-muted mt-1.5 text-[11px]">
@@ -151,10 +152,11 @@ export function StudySession({ task }: { task: Scenario }) {
               {stageLabels[state.stage]}
             </p>
             <h1
-              ref={headingRef}
+              key={state.stage}
+              ref={focusStageHeading}
               tabIndex={-1}
               id="task-heading"
-              className="max-w-xl font-serif text-[1.8rem] leading-tight tracking-tight sm:text-[2.1rem]"
+              className="max-w-xl font-sans text-[1.8rem] leading-tight font-medium tracking-tight sm:text-[2.1rem]"
             >
               {headings[state.stage]}
             </h1>
