@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>StudyCheck · A2 rubric and timeline</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --paper: #f5f6f1;
+        --surface: #fff;
+        --ink: #25332b;
+        --muted: #59675e;
+        --line: #d8dfd5;
+        --soft: #edf2eb;
+        --accent: #315c45;
+        --notice: #f4efdf;
+        --notice-ink: #635021;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #151a17;
+          --surface: #1c231e;
+          --ink: #edf2ed;
+          --muted: #b3bfb6;
+          --line: #3d4b42;
+          --soft: #27332b;
+          --accent: #bdd8c5;
+          --notice: #302c20;
+          --notice-ink: #e7d7a6;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font:
+          15px/1.65 -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+      main {
+        max-width: 1170px;
+        margin: auto;
+        padding: 40px 28px 64px;
+      }
+      a {
+        color: var(--accent);
+        text-underline-offset: 4px;
+      }
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+      h1 {
+        font-size: clamp(26px, 4vw, 37px);
+        line-height: 1.2;
+        letter-spacing: -0.035em;
+        font-weight: 600;
+        max-width: 700px;
+      }
+      h2 {
+        font-size: 23px;
+        letter-spacing: -0.025em;
+        font-weight: 600;
+      }
+      h3 {
+        font-size: 20px;
+        line-height: 1.35;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      strong {
+        font-weight: 600;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+      }
+      .brand strong {
+        font-size: 17px;
+      }
+      .muted,
+      .byline {
+        color: var(--muted);
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 250px;
+        gap: 30px;
+        align-items: start;
+        padding: 34px 0 24px;
+      }
+      .intro {
+        margin-top: 14px;
+        max-width: 690px;
+        color: var(--muted);
+      }
+      .deadline {
+        padding: 20px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 10px;
+      }
+      .deadline .label {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .deadline strong {
+        display: block;
+        font-size: 27px;
+        line-height: 1.25;
+        letter-spacing: -0.025em;
+        margin: 5px 0;
+      }
+      .deadline small {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 9px;
+      }
+      .notice {
+        background: var(--notice);
+        color: var(--notice-ink);
+        padding: 13px 17px;
+        border-radius: 8px;
+        font-size: 13px;
+      }
+      .section-head {
+        margin: 36px 0 16px;
+      }
+      .section-head p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 7px;
+        max-width: 830px;
+      }
+      .table-wrap {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+        background: var(--surface);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        text-align: left;
+        font-size: 14px;
+      }
+      th,
+      td {
+        padding: 18px 20px;
+        vertical-align: top;
+        border-bottom: 1px solid var(--line);
+        overflow-wrap: anywhere;
+      }
+      thead th {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--muted);
+        background: var(--soft);
+      }
+      thead th:first-child {
+        width: 24%;
+      }
+      tbody th {
+        font-weight: 600;
+        font-size: 15px;
+      }
+      tbody tr:last-child > * {
+        border-bottom: 0;
+      }
+      .weight {
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+      .reading-note {
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 12px;
+      }
+      .timeline {
+        margin-top: 20px;
+      }
+      .day {
+        display: grid;
+        grid-template-columns: 112px minmax(0, 1fr);
+        gap: 30px;
+        padding: 25px 0;
+        border-top: 1px solid var(--line);
+      }
+      .date {
+        display: flex;
+        flex-direction: column;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .date strong {
+        font-size: 33px;
+        color: var(--ink);
+        line-height: 1.1;
+        font-variant-numeric: tabular-nums;
+        margin: 3px 0;
+      }
+      .day-content {
+        min-width: 0;
+      }
+      .phase {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .tasks {
+        list-style: none;
+        padding: 0;
+        margin: 17px 0;
+        display: grid;
+        gap: 10px;
+      }
+      .tasks li {
+        display: grid;
+        grid-template-columns: 16px minmax(0, 1fr);
+        gap: 10px;
+      }
+      .check {
+        width: 15px;
+        height: 15px;
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        margin-top: 5px;
+        display: grid;
+        place-items: center;
+        font-size: 11px;
+        line-height: 1;
+      }
+      .check.done {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--paper);
+      }
+      .exit {
+        color: var(--muted);
+        font-size: 13px;
+        max-width: 850px;
+      }
+      .next {
+        margin-top: 28px;
+        background: var(--soft);
+        padding: 19px 21px;
+        border-radius: 8px;
+      }
+      .next strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+      .source {
+        font-size: 12px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+        margin-top: 30px;
+      }
+      .source p + p {
+        margin-top: 7px;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+      }
+      @media (max-width: 760px) {
+        main {
+          padding: 24px 20px 40px;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .deadline {
+          max-width: none;
+        }
+        .deadline strong {
+          font-size: 24px;
+        }
+        .table-wrap {
+          border: 0;
+          background: transparent;
+          overflow: visible;
+        }
+        table,
+        tbody,
+        tr,
+        th,
+        td {
+          display: block;
+          width: 100%;
+        }
+        thead {
+          display: none;
+        }
+        tbody tr {
+          padding: 19px 0;
+          border-top: 1px solid var(--line);
+        }
+        tbody th,
+        tbody td {
+          padding: 0;
+          border: 0;
+        }
+        tbody th {
+          font-size: 17px;
+        }
+        .weight {
+          display: inline;
+          margin-left: 12px;
+        }
+        tbody td {
+          margin-top: 13px;
+        }
+        tbody td:before {
+          content: attr(data-label);
+          display: block;
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--muted);
+          margin-bottom: 4px;
+        }
+        .day {
+          grid-template-columns: 68px minmax(0, 1fr);
+          gap: 17px;
+        }
+        .section-head {
+          margin-top: 29px;
+        }
+      }
+      @media (max-width: 380px) {
+        main {
+          padding-inline: 15px;
+        }
+        .day {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .date {
+          flex-direction: row;
+          align-items: baseline;
+          gap: 6px;
+        }
+        .date strong {
+          font-size: 24px;
+        }
+        .weight {
+          display: block;
+          margin-left: 0;
+        }
+      }
+      @media print {
+        :root {
+          color-scheme: light;
+          --paper: #fff;
+          --surface: #fff;
+          --ink: #18231d;
+          --muted: #4b594f;
+          --line: #ccc;
+          --soft: #f4f5f2;
+          --accent: #315c45;
+          --notice: #f6f2e6;
+          --notice-ink: #493d21;
+        }
+        body {
+          font-size: 10pt;
+        }
+        main {
+          max-width: none;
+          padding: 0;
+        }
+        .day,
+        tr,
+        .deadline {
+          break-inside: avoid;
+        }
+        .hero {
+          padding-top: 22px;
+        }
+        .source a {
+          color: inherit;
+        }
+        .section-head {
+          margin-top: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <strong>StudyCheck / IIS A2</strong
+        ><span class="byline"
+          >Hassan Umar Hassan · Plan reviewed 19 November 2026</span
+        >
+      </header>
+      <section class="hero" aria-labelledby="title">
+        <div>
+          <h1 id="title">
+            A working task.<br />Now the evidence and submission.
+          </h1>
+          <p class="intro">
+            Task 01 is verified by Hassan, and the two additional variants are
+            implemented with developer checks. Next: diagram, storyboards and
+            report. This is a work plan, not a prediction of marks.
+          </p>
+        </div>
+        <aside class="deadline" aria-label="Working deadline">
+          <span class="label">Working deadline, reported by Hassan</span
+          ><strong>25 November 2026</strong><span>Wednesday · UK time</span
+          ><small
+            >Target: ready on 24 November.<br />Exact revised cutoff time is
+            unconfirmed.</small
+          >
+        </aside>
+      </section>
+      <p class="notice">
+        Confirm the new cutoff time in Canvas. Do not assume the former 21:00
+        time applies to the revised date.
+      </p>
+      <section aria-labelledby="rubric-title">
+        <div class="section-head">
+          <h2 id="rubric-title">Rubric beside the checklist</h2>
+          <p>
+            All four criteria still need final submission evidence. “Already
+            present” describes the current foundation, not full marks or a
+            finished criterion.
+          </p>
+        </div>
+        <div class="table-wrap">
+          <table aria-labelledby="rubric-title">
+            <thead>
+              <tr>
+                <th scope="col">Criterion / weight</th>
+                <th scope="col">Already present</th>
+                <th scope="col">Still to do</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  Design reasoning and scope<span class="weight">30 marks</span>
+                </th>
+                <td data-label="Already present">
+                  A1 problem, a source-supported Task 01, controlled warning
+                  conditions and documented scope/limitations.
+                </td>
+                <td data-label="Still to do">
+                  explain the final decisions in the report, connect them to
+                  verified A1 literature and named Weeks 1–4 concepts, and
+                  justify the simulation and small scenario set.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Developed interaction<span class="weight">30 marks</span>
+                </th>
+                <td data-label="Already present">
+                  all three scripted variants run end to end under both
+                  conditions, with optional notes, preserved initial answers and
+                  appropriate review. Task 01 is verified by Hassan; the added
+                  variants have developer checks. Advice and claim flagging are
+                  visibly simulated.
+                </td>
+                <td data-label="Still to do">
+                  prepare two or three illustrated interaction examples from the
+                  developed cases. Three distinct content cases are our chosen
+                  coverage, not a separately stated requirement for three app
+                  tasks.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Architecture and technical reasoning<span class="weight"
+                    >20 marks</span
+                  >
+                </th>
+                <td data-label="Already present">
+                  typed content, a keyed example workspace, explicit
+                  stages/reducer, shared presentation components, case-aware
+                  review logic, a state hook and in-memory events. Technology
+                  roles are explained in the README.
+                </td>
+                <td data-label="Still to do">
+                  a diagram and concise technical explanation matching the final
+                  code.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  Development evidence and authorship<span class="weight"
+                    >20 marks</span
+                  >
+                </th>
+                <td data-label="Already present">
+                  a development record, meaningful Git milestones, recorded
+                  checks, AI-assistance examples and an attributed source
+                  passage. README identifies Hassan Umar Hassan as author.
+                </td>
+                <td data-label="Still to do">
+                  final evidence, reproducible repository inspection and the
+                  designated submission version.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="reading-note">
+          Weights: 30 + 30 + 20 + 20 = 100. The brief asks for two or three
+          illustrated interaction examples; the three app cases are our chosen
+          coverage.
+        </p>
+      </section>
+      <section aria-labelledby="timeline-title">
+        <div class="section-head">
+          <h2 id="timeline-title">Working timeline · 19–25 November</h2>
+          <p>
+            Original work targets, with the case stages completed early on 19
+            November and the 25th kept as a submission buffer. Checked items are
+            recorded work; empty boxes are outstanding tasks.
+          </p>
+        </div>
+        <div class="timeline">
+          <section class="day" aria-labelledby="day-0">
+            <div class="date">
+              <span>Thursday</span><strong>19</strong><span>November</span>
+            </div>
+            <div class="day-content">
+              <p class="phase">Task 01 verified by Hassan</p>
+              <h3 id="day-0">Consolidate the foundation</h3>
+              <ul class="tasks">
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Complete Task 01,
+                    both reminder conditions, optional notes and review.</span
+                  >
+                </li>
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Finish the limited
+                    visual polish and standard Next.js font setup.</span
+                  >
+                </li>
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Update README,
+                    author details and the continuing documentation rule.</span
+                  >
+                </li>
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Task 01 verified by
+                    Hassan, as confirmed in his own words on 19 November.</span
+                  >
+                </li>
+              </ul>
+              <p class="exit">
+                <strong>Ready to move on when:</strong> Task 01 verified by
+                Hassan; move on to the contrasting cases.
+              </p>
+            </div>
+          </section>
+          <section class="day" aria-labelledby="day-1">
+            <div class="date">
+              <span>Friday</span><strong>20</strong><span>November</span>
+            </div>
+            <div class="day-content">
+              <p class="phase">
+                Completed early on 19 November · developer checked
+              </p>
+              <h3 id="day-1">Specify the contrasting cases</h3>
+              <ul class="tasks">
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Define one
+                    correct-advice case and one warning-on-a-correct-claim
+                    case.</span
+                  >
+                </li>
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Verify exact lecture
+                    filenames/pages, expected answers and short notes
+                    passages.</span
+                  >
+                </li>
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Fix advice,
+                    warning/flag behaviour and review wording before
+                    implementation.</span
+                  >
+                </li>
+              </ul>
+              <p class="exit">
+                <strong>Ready to move on when:</strong> defensible case
+                specifications. Selected demonstrations cannot estimate detector
+                accuracy or warning effectiveness.
+              </p>
+            </div>
+          </section>
+          <section class="day" aria-labelledby="day-2">
+            <div class="date">
+              <span>Saturday</span><strong>21</strong><span>November</span>
+            </div>
+            <div class="day-content">
+              <p class="phase">
+                Completed early on 19 November · developer checked
+              </p>
+              <h3 id="day-2">Implement and check the remaining cases</h3>
+              <ul class="tasks">
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Add pre-session case
+                    selection and appropriate per-case review content.</span
+                  >
+                </li>
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Keep condition
+                    locking, initial-answer preservation and notes access
+                    consistent.</span
+                  >
+                </li>
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Check every case
+                    under both conditions, reset isolation and relevant edge
+                    cases; run appropriate automated/browser checks.</span
+                  >
+                </li>
+                <li>
+                  <span class="check done" aria-hidden="true">✓</span
+                  ><span
+                    ><span class="sr-only">Complete: </span>Update README and
+                    development record with the actual results.</span
+                  >
+                </li>
+              </ul>
+              <p class="exit">
+                <strong>Ready to move on when:</strong> the intended prototype
+                scope works. Freeze new features afterwards unless a defect
+                requires a change.
+              </p>
+            </div>
+          </section>
+          <section class="day" aria-labelledby="day-3">
+            <div class="date">
+              <span>Sunday</span><strong>22</strong><span>November</span>
+            </div>
+            <div class="day-content">
+              <p class="phase">Proposed work target</p>
+              <h3 id="day-3">Diagram and illustrated examples</h3>
+              <ul class="tasks">
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Create the architecture
+                    diagram from actual components and flows.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Capture two or three
+                    developed interactions, including helpful and misleading
+                    warning behaviour where appropriate.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Label simulations,
+                    synthetic walkthrough records and source evidence
+                    accurately.</span
+                  >
+                </li>
+              </ul>
+              <p class="exit">
+                <strong>Ready to move on when:</strong> figures explain actions,
+                responses and human control without implying a live detector or
+                participant study.
+              </p>
+            </div>
+          </section>
+          <section class="day" aria-labelledby="day-4">
+            <div class="date">
+              <span>Monday</span><strong>23</strong><span>November</span>
+            </div>
+            <div class="day-content">
+              <p class="phase">Proposed work target</p>
+              <h3 id="day-4">Report and references</h3>
+              <ul class="tasks">
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Draft approximately
+                    1,000 main-report words plus a roughly 200-word
+                    abstract.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Check abstract maximum
+                    300 and main explanation maximum 1,100; keep the combined
+                    draft near 1,200 because the recorded brief also contains a
+                    1,300-word stopping rule.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Connect design choices
+                    to A1, verified sources and named lecture concepts; include
+                    the figures and acknowledgement.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Put the counted total
+                    on page one. Do not hide explanatory prose in images.</span
+                  >
+                </li>
+              </ul>
+              <p class="exit">
+                <strong>Ready to move on when:</strong> a complete report draft
+                about the developed version, with genuine limitations and no
+                invented results.
+              </p>
+            </div>
+          </section>
+          <section class="day" aria-labelledby="day-5">
+            <div class="date">
+              <span>Tuesday</span><strong>24</strong><span>November</span>
+            </div>
+            <div class="day-content">
+              <p class="phase">Proposed work target</p>
+              <h3 id="day-5">Final consistency and repository</h3>
+              <ul class="tasks">
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Reconcile app, figures,
+                    report, README, development record and references.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Verify a fresh-checkout
+                    setup, final checks and files intended for publication;
+                    exclude credentials and generated dependency/build
+                    folders.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>With Hassan&#x27;s
+                    authorisation, publish the required public GitHub
+                    repository, verify access, and designate the submission
+                    commit or release.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Insert real
+                    repository/README links and that version into the report.
+                    Export and visually inspect the PDF, including counts and
+                    links.</span
+                  >
+                </li>
+              </ul>
+              <p class="exit">
+                <strong>Ready to move on when:</strong> a reproducible, linked
+                submission package ready one day early. Hosting the app and
+                producing a video are not required by the recorded brief.
+              </p>
+            </div>
+          </section>
+          <section class="day" aria-labelledby="day-6">
+            <div class="date">
+              <span>Wednesday</span><strong>25</strong><span>November</span>
+            </div>
+            <div class="day-content">
+              <p class="phase">Submission day · exact cutoff unconfirmed</p>
+              <h3 id="day-6">Submit and verify</h3>
+              <ul class="tasks">
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Confirm the revised
+                    exact cutoff time and submission requirements in
+                    Canvas.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Submit the final report
+                    before the cutoff; include a ZIP only for necessary material
+                    that cannot reasonably go in the repository and explain it
+                    in the README.</span
+                  >
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span
+                  ><span
+                    ><span class="sr-only">To do: </span>Reopen the uploaded
+                    report, verify its version and links, and retain the
+                    submission receipt.</span
+                  >
+                </li>
+              </ul>
+              <p class="exit">
+                <strong>Ready to move on when:</strong> verified submission, not
+                merely a locally prepared PDF. Any last-minute code change must
+                have a matching report/version update.
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+      <aside class="next">
+        <strong>One next action</strong>Prepare the architecture diagram and two
+        or three illustrated walkthroughs. Hassan has already verified Task 01;
+        no repeat review is requested. Keep the README and development record
+        current after each stage.
+      </aside>
+      <footer class="source">
+        <p>
+          Basis: A2 brief inspection recorded on 16 November and the supplied
+          rubric handoff; this is not a fresh live Canvas rubric check. The
+          revised 25 November date comes from Hassan's update on 19 November.
+          Dates are proposed targets, not availability commitments or completed
+          work.
+        </p>
+        <p>
+          Hosting the app and a video are not required by the recorded brief.
+          Public GitHub publication is a later action requiring Hassan's
+          authorisation. Notes access does not establish reading, and a changed
+          answer does not establish learning.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

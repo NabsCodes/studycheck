@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Button } from "@/components/ui/button";
 import { conditions } from "@/content/scenarios";
+import { adviceReview } from "@/lib/advice-review";
 import {
   answerLabel,
   eventDescription,
@@ -20,7 +21,9 @@ export function SessionReview({
   const condition = conditions.find(
     (item) => item.value === state.condition,
   )?.label;
+  const advice = adviceReview(task, state.condition);
   const facts = [
+    ["Example", task.label],
     [
       "Answer changed",
       state.initialAnswer === state.finalAnswer
@@ -80,12 +83,11 @@ export function SessionReview({
           Expected answer: {answerLabel(task.expectedAnswer)}
         </h2>
         <p className="mt-3 text-sm leading-7">{task.explanation}</p>
-        <p className="text-muted mt-4 text-xs">
-          The error in the simulated advice was:
-        </p>
+        <p className="text-muted mt-4 text-xs">{advice.label}</p>
         <blockquote className="border-line bg-surface mt-2 rounded-lg border p-4 text-sm leading-6">
-          {task.erroneousClaim}
+          {task.claim}
         </blockquote>
+        <p className="text-muted mt-3 text-xs leading-6">{advice.note}</p>
         <p className="text-muted mt-3 text-xs leading-6">
           Lecture 11 · PDF page 5, “Different sources, different failures”;
           pages 8 and 10 provide supporting context.
@@ -114,7 +116,7 @@ export function SessionReview({
         </p>
       </details>
       <Button className="mt-6" variant="primary" onClick={onRestart}>
-        Choose another reminder <span aria-hidden="true">→</span>
+        Choose another example <span aria-hidden="true">→</span>
       </Button>
     </>
   );

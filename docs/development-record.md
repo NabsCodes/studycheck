@@ -62,3 +62,29 @@
 
 - Hassan requested that the README keep being updated through every remaining stage until completion. Recorded an always-applicable project rule and linked it from AGENTS.md so later development sessions retain the instruction.
 - Documentation updates must track actual status, affected instructions/evidence and performed checks, refresh the prose word count and links, and reconcile the final submission materials. This agreement does not authorise publication or invent a submission version.
+
+## 19 November 2026: rubric checklist and revised schedule
+
+- Hassan reported that the deadline moved to 25 November. Updated the working schedule to Wednesday 25 November 2026, with the revised exact cutoff explicitly unconfirmed. The former 20 November at 21:00 remains historical evidence, not the assumed new deadline time.
+- Added `docs/submission-checklist.md` and a companion visual roadmap mapping current evidence and remaining actions to the four rubric criteria. The criteria/weights use the previously inspected brief and supplied handoff; this was not a new live Canvas rubric check. The proposed 19–25 November work targets are not completion records, availability commitments or predicted marks.
+- Linked the checklist from the README and refreshed its prose count. The timeline aims for a ready submission on 24 November, with the 25th reserved for final submission checks. Publication remains a later authorised action. No application features or participant findings were added.
+
+## 19 November 2026: browser-readable roadmap
+
+- Hassan could not view the React canvas and requested HTML instead. Added `docs/submission-roadmap.html` as a standalone document with embedded styling, no external dependencies, and the same four rubric categories, seven dated stages and deadline qualification as the source checklist. Linked it from the README and refreshed the prose count.
+- This changes the format of the planning view, not application features or completion status. The Markdown checklist remains the detailed project record; update the HTML view with it as progress changes.
+- Browser-checked the HTML at desktop width and at 390/320 pixels. It displayed four rubric rows and seven dated stages; document width equalled viewport width at both narrow sizes. Checked the README link/count and formatting. The roadmap has embedded CSS and no external runtime dependencies.
+
+## 19 November 2026: Hassan confirmed Task 01 verification
+
+- Hassan clarified: “No I already verified so we can move on”. Recorded Task 01 as verified by Hassan and removed the repeated walkthrough request. This is his confirmation, not an invented record of which paths or checks he personally performed.
+- Proceeding with the agreed correct-advice and misleading-warning examples. The new cases still require source checks, implementation and developer verification; Hassan's confirmation applies to Task 01.
+
+## 19 November 2026: contrasting examples implemented
+
+- Re-read the original extension proposal, extracted Lecture 11 PDF pages 5/8/10 and visually inspected page 8. Reused the same question/notes rather than inventing new unsupported topics. The correct advice follows the proposal; the targeted false-alarm message was shortened from 29 to 27 words. Task notes distinguish equal word count from equivalent difficulty and replays from independent observations.
+- Added Task 02 (correct advice, no targeted flag) and Task 03 (the same correct advice with an available targeted flag). Kept general advice correctness, authored flag presence and warning style separate. Task 02 uses the same general reminder in both conditions and explicitly explains this baseline in setup. Task 03's general condition is not labelled a displayed targeted false alarm.
+- Added a pre-session example selector and keyed workspace, preserving the shared interaction/reducer. Example changes discard old state and reset the style to general; restart clears the session while retaining its example/style. The selector is absent during active stages. Preserved selector focus across a keyed remount for keyboard selection. Replaced the incorrect-only claim field with a neutral claim and added factual, case-appropriate review logic. Task 01's scenario version became 2; its approved question/advice/notes/warning strings were unchanged.
+- Verified formatting, ESLint, types, ten tests and production build. Extended the preservation check to 108 combinations and added cross-example reset isolation plus baseline/false-alarm review tests. No detector or participant-performance results were inferred.
+- Browser-checked all six example/condition combinations. Task 01 still identified its erroneous advice; Task 02 displayed identical general reminders and supported-advice reviews; Task 03's targeted condition identified a supported claim as a simulated false alarm, while its general condition did not. Checked a No-to-No false-alarm path with notes, Yes-to-No paths without notes, selector locking/focus and correct case identity in review. Observed reset note access as No in the later general-condition review. The open-notes view at 320 pixels had no horizontal overflow; desktop review was inspected at 1280 pixels. No captured console warnings/errors appeared.
+- Updated README, source/method notes, setup screenshot, developer false-alarm screenshot and the rubric checklist/HTML roadmap. Hassan's Task 01 verification is his confirmation; the new variants have developer verification, not an invented claim of Hassan's personal review. Figures, storyboards and report remain to be prepared. No remote repository or publication was created.

@@ -1,15 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { task01 } from "@/content/scenarios";
+import { task01, task02, task03, scenarios } from "@/content/scenarios";
 import {
   initialState,
   notesWereOpened,
   studySessionReducer as reduce,
 } from "@/lib/study-session";
-import type { Answer, Condition, StudyState } from "@/types/study";
+import type { Answer, Condition, Scenario, StudyState } from "@/types/study";
 
-function start(condition: Condition = "general", sessionId = "session-a") {
+function start(
+  condition: Condition = "general",
+  sessionId = "session-a",
+  task: Scenario = task01,
+) {
   const setup = reduce(initialState, { type: "choose-condition", condition });
-  return reduce(setup, { type: "start", sessionId, task: task01, at: 100 });
+  return reduce(setup, { type: "start", sessionId, task, at: 100 });
 }
 
 function decision(answer: Answer = "yes") {
@@ -18,7 +22,7 @@ function decision(answer: Answer = "yes") {
   return reduce(state, { type: "commit-initial", at: 120 });
 }
 
-describe("Task 01 session boundaries", () => {
+describe("Study session boundaries", () => {
   it("does not commit an empty answer or log it as a successful action", () => {
     const state = reduce(start(), { type: "commit-initial", at: 120 });
     expect(state).toMatchObject({
@@ -50,43 +54,48 @@ describe("Task 01 session boundaries", () => {
   it("preserves initial answers for every final choice, in both conditions, with or without notes", () => {
     const answers: Answer[] = ["yes", "no", "not-sure"];
     const conditions: Condition[] = ["general", "claim-specific"];
-    for (const condition of conditions)
-      for (const initial of answers)
-        for (const final of answers)
-          for (const useNotes of [false, true]) {
-            let state = start(condition);
-            state = reduce(state, { type: "select-initial", answer: initial });
-            state = reduce(state, { type: "commit-initial", at: 120 });
-            state = reduce(state, { type: "advice-presented", at: 121 });
-            if (useNotes) {
-              state = reduce(state, { type: "set-notes-open", open: true });
+    for (const task of scenarios)
+      for (const condition of conditions)
+        for (const initial of answers)
+          for (const final of answers)
+            for (const useNotes of [false, true]) {
+              let state = start(condition, "session-a", task);
               state = reduce(state, {
-                type: "notes-rendered",
-                open: true,
-                at: 130,
+                type: "select-initial",
+                answer: initial,
               });
+              state = reduce(state, { type: "commit-initial", at: 120 });
+              state = reduce(state, { type: "advice-presented", at: 121 });
+              if (useNotes) {
+                state = reduce(state, { type: "set-notes-open", open: true });
+                state = reduce(state, {
+                  type: "notes-rendered",
+                  open: true,
+                  at: 130,
+                });
+              }
+              state = reduce(state, {
+                type: "select-final",
+                answer: final,
+                at: 140,
+              });
+              state = reduce(state, { type: "submit-final", at: 150 });
+              expect(state).toMatchObject({
+                stage: "review",
+                condition,
+                initialAnswer: initial,
+                finalAnswer: final,
+                task: { id: task.id, messageVersion: task.messageVersion },
+              });
+              if (state.stage !== "review")
+                throw new Error("Expected completed session");
+              expect(notesWereOpened(state.events)).toBe(useNotes);
+              expect(
+                state.events.filter(
+                  (event) => event.kind === "initial-answer-committed",
+                ),
+              ).toHaveLength(1);
             }
-            state = reduce(state, {
-              type: "select-final",
-              answer: final,
-              at: 140,
-            });
-            state = reduce(state, { type: "submit-final", at: 150 });
-            expect(state).toMatchObject({
-              stage: "review",
-              condition,
-              initialAnswer: initial,
-              finalAnswer: final,
-            });
-            if (state.stage !== "review")
-              throw new Error("Expected completed session");
-            expect(notesWereOpened(state.events)).toBe(useNotes);
-            expect(
-              state.events.filter(
-                (event) => event.kind === "initial-answer-committed",
-              ),
-            ).toHaveLength(1);
-          }
   });
 
   it("records note access after presentation, handles reopen, and deduplicates effect replay", () => {
@@ -161,6 +170,43 @@ describe("Task 01 session boundaries", () => {
     expect(previous).toMatchObject({
       stage: "review",
       sessionId: "session-a",
+      initialAnswer: "yes",
+    });
+  });
+});
+
+describe("Scenario boundaries", () => {
+  it("starts a different example without retaining the previous answer or notes", () => {
+    let previous = reduce(start("claim-specific", "case-three", task03), {
+      type: "select-initial",
+      answer: "yes",
+    });
+    previous = reduce(previous, { type: "commit-initial", at: 120 });
+    previous = reduce(previous, { type: "set-notes-open", open: true });
+    previous = reduce(previous, {
+      type: "notes-rendered",
+      open: true,
+      at: 130,
+    });
+    previous = reduce(previous, { type: "submit-final", at: 140 });
+    const reset = reduce(previous, { type: "restart" });
+    const current = reduce(reset, {
+      type: "start",
+      sessionId: "case-two",
+      task: task02,
+      at: 200,
+    });
+    expect(current).toMatchObject({
+      stage: "initial",
+      draft: null,
+      task: { id: task02.id },
+    });
+    if (current.stage === "setup") throw new Error("Expected active session");
+    expect(current.events).toHaveLength(1);
+    expect(notesWereOpened(current.events)).toBe(false);
+    expect(previous).toMatchObject({
+      stage: "review",
+      task: { id: task03.id },
       initialAnswer: "yes",
     });
   });

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { AnswerChoices } from "@/components/study/answer-choices";
 import { LectureNotes } from "@/components/study/lecture-notes";
 import { SessionReview } from "@/components/study/session-review";
-import { conditions } from "@/content/scenarios";
+import { conditions, scenarios } from "@/content/scenarios";
 import { useStudySession } from "@/hooks/use-study-session";
 import { answerLabel } from "@/lib/study-session";
 import type { Scenario } from "@/types/study";
@@ -26,9 +26,9 @@ const headings = {
 
 const stageLabels = {
   setup: "Session setup",
-  initial: "Task 01 · your answer first",
-  decision: "Task 01 · advice & decision",
-  review: "Task 01 · session complete",
+  initial: "your answer first",
+  decision: "advice & decision",
+  review: "session complete",
 };
 
 // A new keyed heading mounts for each stage, so focus follows screen changes.
@@ -36,7 +36,15 @@ function focusStageHeading(element: HTMLHeadingElement | null) {
   element?.focus();
 }
 
-export function StudySession({ task }: { task: Scenario }) {
+export function StudySession({
+  task,
+  onTaskChange,
+  focusExampleOnMount = false,
+}: {
+  task: Scenario;
+  onTaskChange: (id: string) => void;
+  focusExampleOnMount?: boolean;
+}) {
   const {
     state,
     chooseCondition,
@@ -48,6 +56,7 @@ export function StudySession({ task }: { task: Scenario }) {
     submitFinal,
     restart,
   } = useStudySession(task);
+  const exampleRef = useRef<HTMLSelectElement>(null);
   const notesButtonRef = useRef<HTMLButtonElement>(null);
   const errorRef = useRef<HTMLParagraphElement>(null);
   const currentStep = steps.findIndex((step) => step.stage === state.stage);
@@ -55,6 +64,10 @@ export function StudySession({ task }: { task: Scenario }) {
     (item) => item.value === state.condition,
   )?.label;
   const showError = state.stage === "initial" && state.showError;
+
+  useEffect(() => {
+    if (focusExampleOnMount) exampleRef.current?.focus();
+  }, [focusExampleOnMount]);
 
   useEffect(() => {
     if (showError) errorRef.current?.focus();
@@ -91,7 +104,7 @@ export function StudySession({ task }: { task: Scenario }) {
           </div>
           <div className="flex items-center gap-4 sm:gap-6">
             <p className="text-muted hidden text-xs sm:block">
-              Task 01 · {task.title}
+              {task.label} · {task.title}
             </p>
             {state.stage !== "setup" && (
               <Button
@@ -149,6 +162,7 @@ export function StudySession({ task }: { task: Scenario }) {
               </p>
             )}
             <p className="text-muted mb-2 text-xs">
+              {state.stage !== "setup" && `${task.label} · `}
               {stageLabels[state.stage]}
             </p>
             <h1
@@ -164,8 +178,36 @@ export function StudySession({ task }: { task: Scenario }) {
             {state.stage === "setup" && (
               <>
                 <p className="text-muted mt-3 text-sm leading-6">
-                  Both versions use the same question, advice and lecture notes.
+                  Choose an example and a reminder style. Within each example,
+                  both styles use the same question, advice and lecture notes.
                 </p>
+                <div className="mt-7">
+                  <label
+                    htmlFor="task-select"
+                    className="mb-3 block text-sm font-medium"
+                  >
+                    Example
+                  </label>
+                  <select
+                    ref={exampleRef}
+                    id="task-select"
+                    className="border-line bg-surface min-h-12 w-full rounded-lg border px-3 py-2 text-sm"
+                    value={task.id}
+                    onChange={(event) => onTaskChange(event.target.value)}
+                  >
+                    {scenarios.map((example) => (
+                      <option key={example.id} value={example.id}>
+                        {example.label} · {example.title}
+                      </option>
+                    ))}
+                  </select>
+                  {!task.hasClaimFlag && (
+                    <p className="text-muted mt-3 text-xs leading-6">
+                      This example has no targeted claim flag, so both styles
+                      use the same general reminder.
+                    </p>
+                  )}
+                </div>
                 <fieldset className="mt-8">
                   <legend className="mb-3 text-sm font-medium">
                     Reminder condition
@@ -200,13 +242,13 @@ export function StudySession({ task }: { task: Scenario }) {
                   Start session <span aria-hidden="true">→</span>
                 </Button>
                 <ul className="border-line text-muted mt-7 flex flex-wrap gap-x-5 gap-y-2 border-t pt-4 text-xs">
-                  <li>One fixed task</li>
+                  <li>Three fixed examples</li>
                   <li>Optional lecture notes</li>
                   <li>Simulated AI advice</li>
                 </ul>
                 <p className="text-muted mt-4 text-xs leading-6">
                   This setup is separate from the student task. The reminder
-                  style stays locked during a session.
+                  style and example stay locked during a session.
                 </p>
               </>
             )}

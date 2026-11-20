@@ -1,6 +1,5 @@
-import { StudySession } from "@/components/study/study-session";
-import { task01 } from "@/content/scenarios";
+import { StudyWorkspace } from "@/components/study/study-workspace";
 
 export default function HomePage() {
-  return <StudySession task={task01} />;
+  return <StudyWorkspace />;
 }

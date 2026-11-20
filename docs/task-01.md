@@ -34,7 +34,7 @@ One session exists in browser memory. It stores version identifiers, condition, 
 
 Opening notes does not establish reading or comprehension. Agreement with the AI recommendation is not a complete reliance measure. A changed answer is not necessarily corrected; a correct answer after note access does not show what caused it, identify the student's reasoning or demonstrate learning. Elapsed time is not active study time. No participant observations, task difficulty results or effectiveness findings have been invented.
 
-Replaying the same question reveals its answer and is useful for inspection, not independent experimental comparison. Remaining correct-advice and misleading-warning cases are future work after Hassan tries this milestone. Selected cases cannot estimate detector accuracy or warning-fatigue effects. Newly used primary-paper claims need original-source verification; the A1 papers were not freshly rechecked during implementation.
+Replaying the same question reveals its answer and is useful for inspection, not independent experimental comparison. Hassan confirmed this interaction was already verified on 19 November. The correct-advice and misleading-warning variants are now implemented; see [Tasks 02–03](task-02-03.md). Selected cases cannot estimate detector accuracy or warning-fatigue effects. Newly used primary-paper claims need original-source verification; the A1 papers were not freshly rechecked during implementation.
 
 ## Design connections
 

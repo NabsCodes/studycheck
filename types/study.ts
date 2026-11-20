@@ -7,12 +7,14 @@ export interface Scenario {
   adviceVersion: string;
   notesVersion: string;
   messageVersion: string;
+  label: string;
   title: string;
   question: string;
   advice: string;
   aiAnswer: Answer;
   expectedAnswer: Answer;
-  erroneousClaim: string;
+  claim: string;
+  hasClaimFlag: boolean;
   explanation: string;
   notes: string;
   warnings: Record<Condition, string>;

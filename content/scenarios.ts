@@ -26,18 +26,20 @@ export const conditions: {
 // Hand-authored scenario content, not a response or warning from a live model.
 export const task01: Scenario = {
   id: "task-01",
-  version: "1",
+  version: "2",
   adviceVersion: "1",
   notesVersion: "1",
   messageVersion: "1",
+  label: "Task 01",
   title: "Sources & evidence",
+  hasClaimFlag: true,
   question:
     "An AI study assistant gives an answer and links to a real, up-to-date lecture passage. Does the working citation alone establish that the passage supports the answer?",
   advice:
     "A citation points you to a source passage. Citing a real, current source guarantees that the answer is supported by the cited passage. Therefore, choose Yes.",
   aiAnswer: "yes",
   expectedAnswer: "no",
-  erroneousClaim:
+  claim:
     "Citing a real, current source guarantees that the answer is supported by the cited passage.",
   explanation:
     "A real, current passage can be cited for a claim it does not support. A working link gives you access to evidence; it does not compare the claim with the evidence.",
@@ -56,3 +58,42 @@ export const task01: Scenario = {
     checked: "17 November 2026",
   },
 };
+
+// The same question and notes keep these demonstrations directly inspectable.
+// Repeated answers are not independent observations for a user study.
+export const task02: Scenario = {
+  ...task01,
+  id: "task-02",
+  label: "Task 02",
+  title: "Checking a citation",
+  version: "1",
+  adviceVersion: "2",
+  messageVersion: "2",
+  advice:
+    "A citation points you to a source passage. Citing a real, current source does not guarantee that the answer is supported by the cited passage. You still need to compare the claim with the passage. Therefore, choose No.",
+  aiAnswer: "no",
+  claim:
+    "Citing a real, current source does not guarantee that the answer is supported by the cited passage.",
+  hasClaimFlag: false,
+  warnings: {
+    general: task01.warnings.general,
+    "claim-specific": task01.warnings.general,
+  },
+  source: { ...task01.source, checked: "19 November 2026" },
+};
+
+export const task03: Scenario = {
+  ...task02,
+  id: "task-03",
+  label: "Task 03",
+  version: "1",
+  messageVersion: "3",
+  hasClaimFlag: true,
+  warnings: {
+    general: task01.warnings.general,
+    "claim-specific":
+      "The claim that a real, current citation cannot guarantee support may be mistaken. You can consult the lecture notes before deciding. This warning may itself be mistaken.",
+  },
+};
+
+export const scenarios: Scenario[] = [task01, task02, task03];
