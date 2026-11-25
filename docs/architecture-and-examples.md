@@ -47,7 +47,7 @@ The primary illustrated examples now use cropped actual screenshots with short n
 - Task 02 [walkthrough SVG](storyboards/annotated/task-02-walkthrough.svg) and [PNG](storyboards/annotated/task-02-walkthrough.png).
 - Task 03 [walkthrough SVG](storyboards/annotated/task-03-walkthrough.svg) and [PNG](storyboards/annotated/task-03-walkthrough.png).
 
-The assembled report review copy now contains the rationale, abstract, figures, references and acknowledgement; final requirements and genuine repository/version links remain outstanding. These figures are not a submitted report or evidence of Canvas submission. Codex assisted with code inspection, scripted capture, figure preparation and verification; Hassan retains the final academic judgement.
+Open [the illustrated examples](illustrated-examples.html) alongside the report. Codex produced the diagram and screenshot walkthroughs and ran the recorded checks. See the [development record](development-record.md) for Hassan’s decisions and the verification history.
 
 ## Screenshot refinement, 24 November
 
@@ -63,4 +63,4 @@ The primary figure pack and annotated exports use Task 01–03 labels rather tha
 
 ## Report integration
 
-The Word/PDF review copy was assembled on 24 November. After the requested Times New Roman/APA abstract revision, all twelve pages were rendered and visually inspected. Screenshot excerpts were placed individually at readable sizes rather than shrinking the tall HTML compositions. Task 01 occupies two parts of one illustrated example; Tasks 02 and 03 each have one page. Cropped screenshot pixels are unchanged and source hashes/crop rectangles are retained with the report assets. Task 03 shows the actual false-alarm review text. Final publication/version links and submission sign-off are still pending.
+The Word/PDF review copy was assembled on 24 November. After the requested Times New Roman/APA abstract revision, all twelve pages were rendered and visually inspected. Screenshot excerpts were placed individually at readable sizes rather than shrinking the tall HTML compositions. Task 01 occupies two parts of one illustrated example; Tasks 02 and 03 each have one page. Cropped screenshot pixels are unchanged and source hashes/crop rectangles are retained with the report assets. Task 03 shows the actual false-alarm review text. The report cover identifies the GitHub version used for assessment.

@@ -4,7 +4,7 @@ Author: Hassan Umar Hassan. Status reviewed 25 November 2026, Europe/London.
 
 Deadline: **Wednesday 25 November 2026 at 21:00 UK time**, rechecked in the signed-in Canvas assignment body on 25 November. Complete the remaining links and final checks before submitting today.
 
-The interaction, diagram, three illustrated examples and twelve-page report review copy are prepared. Hassan accepted the requested formatting and asked to proceed. The report has been copied into the OneDrive assignment folder; the app remains outside OneDrive. The full brief and rubric weights were rechecked on 25 November. Expanded rubric descriptions and upload file-type restrictions remain open. The repository already exists publicly at application commit `b261798`; latest documentation/figure changes remain local. No new push or submission occurred. Historical target dates below are not completion dates. Coverage does not predict awarded marks.
+The prototype, diagram, illustrated examples and twelve-page report have been checked. The draft exports in OneDrive link the verified public commit `68cc918`. Hassan supplied the full rubric descriptions and the project was reviewed against all four. The agreed README cleanup and rubric record will go into the final documentation update. Refresh the report links once that update is public, then confirm Canvas file acceptance, submit the report and keep the receipt.
 
 ## Rubric mapping
 
@@ -114,7 +114,8 @@ Exit: a reproducible, linked submission package ready one day early. Hosting the
 
 - [x] Confirm the revised cutoff: the Canvas course assignment entry shows 25 November at 21:00.
 - [x] Reopen and read the full current assignment body and rubric weights on 25 November.
-- [ ] Read the remaining expanded rubric descriptors and confirm upload file-type acceptance; current UI controls did not complete these checks.
+- [x] Review all four expanded rubric descriptions from the text Hassan supplied.
+- [ ] Confirm Canvas accepts the report file type during upload.
 - [ ] Submit the final report before the cutoff; include a ZIP only for necessary material that cannot reasonably go in the repository and explain it in the README.
 - [ ] Reopen the uploaded report, verify its version and links, and retain the submission receipt.
 
@@ -128,7 +129,7 @@ Exit: verified submission, not merely a locally prepared PDF. Any last-minute co
 - [Task 01 notes](task-01.md): source pages and interpretation limits.
 - [A2 Canvas assignment](https://canvas.bham.ac.uk/courses/90253/assignments/633325): authoritative current requirements; university sign-in may be required.
 
-Next action: finish the remaining expanded-rubric/upload checks and prepare the documentation/figure update for the existing public repository, then add its real final version links to the report. Hassan has already verified Task 01; no repeat walkthrough is requested. Update this checklist as stages actually finish.
+Hassan will push the final documentation update. The next report export will use that public commit for its README, development record and version links.
 
 ## Verification completed on 25 November
 
@@ -136,6 +137,7 @@ Next action: finish the remaining expanded-rubric/upload checks and prepare the 
 - [x] Run formatting, ESLint, typecheck, ten tests and production build successfully on the current Desktop source.
 - [x] Install, test, build and serve a fresh clone of the existing public application commit.
 - [x] Re-read all cited lecture pages and check paper author/publication metadata.
-- [ ] Complete remaining interactive/rubric/upload checks and synchronise latest documentation/figure changes.
+- [x] Compare the report and evidence with all four expanded rubric descriptions supplied by Hassan.
+- [ ] Push the final documentation update and verify the public commit.
 - [ ] Insert the verified submitted version links, export/review the final report and refresh the OneDrive copies.
 - [ ] Submit on Canvas and retain the receipt.

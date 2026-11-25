@@ -1,6 +1,6 @@
 # StudyCheck
 
-README prose word count: 961
+README prose word count: 928
 
 **Hassan Umar Hassan** · MSc Intelligent Interactive Systems · University of Birmingham
 
@@ -90,5 +90,3 @@ One test checks answer preservation across 108 combinations. Other tests cover c
 The notes paraphrase `W04_L11_Retrieval_Grounding_and_Provenance.pdf`, PDF pages 5, 8 and 10. [Task 01 notes](docs/task-01.md) link the original lecture and explain the answer key. [Tasks 02–03 notes](docs/task-02-03.md) explain the baseline and false alarm. The lecture PDF is not redistributed.
 
 I supplied the A1 foundation, approved the direction and interaction, requested revisions, confirmed Task 01 and reviewed the report. OpenAI Codex generated the application code and tests, prepared the wireframes, diagram and screenshot walkthroughs, drafted the documentation/report and ran the recorded checks. The development record documents changes and verification, including the focus, font and screenshot revisions above. I remain responsible for the final submission.
-
-My Dikko & Mahmoud, Party Gift Pass, Vextra and WardWise projects informed the organisation and interaction patterns; their business code and assets were not copied. The source-page icon was created with Codex assistance.

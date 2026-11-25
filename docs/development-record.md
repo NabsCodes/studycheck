@@ -1,5 +1,11 @@
 # Development record
 
+## Student decisions and checks
+
+- **Task 01.** Hassan approved the interaction flow and confirmed Task 01 after it was developed. Codex separately checked the additional scenarios and both reminder styles. See [Task 01 confirmation](#19-november-2026-hassan-confirmed-task-01-verification) and [contrasting examples](#19-november-2026-contrasting-examples-implemented).
+- **Interface revision.** Hassan reported the editor diagnostics and asked to use the usual Next.js font setup. Codex reproduced the diagnostics, revised the focus and font implementation, and checked keyboard focus across the interaction. See [editor diagnostics](#19-november-2026-editor-diagnostics-and-typography) and [font setup](#19-november-2026-simpler-font-and-editor-setup).
+- **Report review.** Hassan challenged the draft's description of Codex as merely assisting. The report and README were revised to name what Codex generated, what Hassan decided and the checks each carried out. See [authorship clarification](#24-november-2026-explicit-authorship-and-final-format-clarification).
+
 ## 17 November 2026: local foundation
 
 - Hassan approved the full-flow wireframe, then chose a fresh local project at `/Users/nabeelhassan/Desktop/studycheck`, outside OneDrive. The application milestone is one Task 01 interaction. No remote repository or publication is authorised for this milestone.
@@ -204,3 +210,8 @@
 - Found five local documentation edits after that push, including the agreed 961-word README without pending-push narration. These are being preserved as a final local documentation snapshot for Hassan to push himself. No push is delegated to Codex. The submitted report will identify that source snapshot and link its README and development record directly.
 - Reopened the current Canvas assignment and read its assignment metadata through the signed-in browser. The full brief and weights remain consistent with the earlier check. Print preview exposed part of the longer design descriptor, but the full expanded descriptors and accepted file extensions were not reliably retrieved. Cancelled the temporary preview/save attempt without a download or submission and restored the normal assignment page. No claim of a complete expanded-rubric recheck is made.
 - The report export remains a separate file outside the source repository. Its final link insertion, render checks and OneDrive hashes will be recorded with that export, so submission preparation is not confused with an actual Canvas receipt.
+
+## 25 November 2026: remove peripheral README references
+
+- Hassan questioned whether the README needed the final paragraph naming his other projects and the icon. Removed that paragraph: no business code or assets were copied, and the general pattern/reference review is already development history. The original folded-page/check icon was generated with Codex; that provenance is retained here alongside the existing icon creation/check entry. The main AI-production acknowledgement and lecture/source attribution remain unchanged.
+- README prose count is now 928. This changes two documentation files only; the application, figures and report text remain unchanged. The currently exported report identifies commit 68cc918, so any final documentation commit/push should be verified and the report's frozen README/development-record/version links refreshed before submission. Batch that refresh after the pending rubric review rather than claim the current public snapshot already contains this removal.
