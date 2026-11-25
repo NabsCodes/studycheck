@@ -1,6 +1,6 @@
 # A2 report assembly
 
-Status: assembled Word and PDF review copies prepared and all twelve rendered pages visually inspected; not submission-ready.
+Historical notes from the report assembly and first public figures, 24–25 November 2026. The [submission checklist](submission-checklist.md) records the current steps.
 
 The local HTML/Markdown draft is kept separately from the public-facing app repository in the IIS chat workspace under `output/report/IIS_A2_Report_Draft.html` and `output/report/IIS_A2_Report_Draft.md`. Student identity is included in that report; it was not added to the README. The report has no presentation date on its first page.
 

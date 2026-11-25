@@ -1,8 +1,10 @@
 # StudyCheck
 
-README prose word count: 927
+README prose word count: 879
 
-**Hassan Umar Hassan** · MSc Intelligent Interactive Systems · University of Birmingham
+**Hassan Umar Hassan** · MSc Advanced Computer Science · University of Birmingham
+
+Intelligent Interactive Systems coursework
 
 StudyCheck is a prototype for checking AI study advice against lecture notes. It develops the question raised in my A1 literature review: could a warning about a particular claim help students check an answer more effectively than a general reminder?
 
@@ -71,7 +73,7 @@ The [system diagram and architecture notes](docs/architecture-and-examples.md) e
 
 ## Development and checks
 
-The [development record](docs/development-record.md) explains significant decisions, corrections and checks. Development included replacing the focus effect with a keyed heading and callback ref to retain stage focus without the effect, using standard Next.js font loading after my feedback, and replacing schematic summaries with screenshots so the notes and submission controls can be inspected. Git milestones include [the first complete task](https://github.com/NabsCodes/studycheck/commit/13fb206), [interface refinement](https://github.com/NabsCodes/studycheck/commit/ffd4525) and [font changes](https://github.com/NabsCodes/studycheck/commit/fd7d9bc).
+The [development record](docs/development-record.md) covers the first task, my frontend revisions and how we prepared the figures. It links each stage to the code, screenshots or checks that show what changed.
 
 On 25 November 2026, formatting, lint, types, all ten tests and the production build passed. A fresh clone of the application at commit `b261798` installed from the lockfile, passed the tests, built and served successfully.
 
@@ -83,7 +85,7 @@ pnpm test
 pnpm build
 ```
 
-One test checks answer preservation across 108 combinations. Other tests cover condition locking, duplicate/stale events, notes access and reset isolation. Earlier browser walkthroughs checked both conditions, keyboard/focus behaviour and narrow screens; their dates and results are in the development record. These are developer checks, not participant findings or complete accessibility certification. Hassan confirmed Task 01 separately.
+One test checks answer preservation across 108 combinations. Other tests cover condition locking, duplicate/stale events, notes access and reset isolation. Codex also checked both reminder styles, keyboard focus and narrow screens in the browser. I confirmed Task 01.
 
 ## Sources and AI use
 

@@ -4,7 +4,7 @@ Author: Hassan Umar Hassan. Status reviewed 25 November 2026, Europe/London.
 
 Deadline: **Wednesday 25 November 2026 at 21:00 UK time**, rechecked in the signed-in Canvas assignment body on 25 November. Complete the remaining links and final checks before submitting today.
 
-The prototype, diagram, illustrated examples and twelve-page report have been checked. The draft exports in OneDrive link the verified public commit `68cc918`. Hassan supplied the full rubric descriptions and the project was reviewed against all four. The agreed README cleanup and rubric record will go into the final documentation update. Refresh the report links once that update is public, then confirm Canvas file acceptance, submit the report and keep the receipt.
+The prototype, figures and twelve-page report have been checked against all four expanded rubric criteria. The report cover identifies the repository version. Final steps are listed under [Submission checks](#submission-checks).
 
 ## Rubric mapping
 
@@ -55,6 +55,8 @@ Still needed: final evidence, reproducible repository inspection and the designa
 - [ ] Keep original, adapted and AI-assisted contributions clear in the report and repository.
 
 ## Working timeline
+
+The entries below preserve the original development plan.
 
 ### Thursday 19 November: consolidate the foundation
 
@@ -131,13 +133,13 @@ Exit: verified submission, not merely a locally prepared PDF. Any last-minute co
 
 Hassan will push the final documentation update. The next report export will use that public commit for its README, development record and version links.
 
-## Verification completed on 25 November
+## Submission checks
 
-- [x] Copy the unchanged Times New Roman Word/PDF review files into OneDrive `Assignments/A2/Report`; verify matching hashes.
+- [x] Verify the Times New Roman Word/PDF report and matching copies in OneDrive `Assignments/A2`.
 - [x] Run formatting, ESLint, typecheck, ten tests and production build successfully on the current Desktop source.
 - [x] Install, test, build and serve a fresh clone of the existing public application commit.
 - [x] Re-read all cited lecture pages and check paper author/publication metadata.
 - [x] Compare the report and evidence with all four expanded rubric descriptions supplied by Hassan.
 - [ ] Push the final documentation update and verify the public commit.
-- [ ] Insert the verified submitted version links, export/review the final report and refresh the OneDrive copies.
+- [ ] Check that the corrected report links to the same public commit and matches its OneDrive copy.
 - [ ] Submit on Canvas and retain the receipt.

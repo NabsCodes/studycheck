@@ -1,5 +1,7 @@
 # A2 requirements and figure review, 24 November 2026
 
+This is the dated record of the requirements and figure reviews on 24 and 25 November. The final comparison below incorporates the expanded rubric Hassan supplied. See the [submission checklist](submission-checklist.md) for the remaining steps.
+
 ## Evidence boundary
 
 The signed-in Canvas course homepage was inspected on 24 November. Its A2 assignment entry shows **25 November at 21:00**. The assignment body did not render during this check, so the full current brief and all four expanded rubric descriptions were not newly verified. Requirements below use the 16 November direct brief inspection and supplied handoff. The earlier direct inspection opened only the design-reasoning expanded descriptor; the other three detailed descriptions remain handoff paraphrases. Recheck these before the final requirements sign-off.
@@ -70,4 +72,4 @@ Hassan supplied the full Canvas brief and the expanded wording for all four crit
 - **Architecture and technical reasoning (20).** Figure 1 on page 7 maps the student's actions and feedback through the interface, local task content and session logic. The rationale and [architecture notes](architecture-and-examples.md) add the hook, reducer, answer-key review and temporary storage details. The dashed inset identifies the authored advice and flags. The build dependency for Geist and the optional university lecture link are documented in the README.
 - **Development evidence and authorship (20).** The README and report describe Codex's production and verification work explicitly. The [development record](development-record.md#student-decisions-and-checks) points to dated examples of Hassan confirming Task 01, reporting diagnostics, revising the font direction and reviewing the acknowledgement. The source note attributes the lecture paraphrase. The checked app and report support the supplied descriptors. File type acceptance is still to be confirmed in Canvas.
 
-The PDF and Word exports in OneDrive were rechecked against their recorded hashes. They identify the earlier public commit `68cc918`, which still has the previous README paragraph. The next report export needs the public commit for the agreed README cleanup and this rubric review.
+At the time of this comparison, the OneDrive report copies still pointed to `68cc918`. A later export updated them to `84153e7`. The report cover is the source for the commit used in the submission.
