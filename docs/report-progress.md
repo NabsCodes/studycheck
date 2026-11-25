@@ -20,4 +20,10 @@ Rechecked lecture title pages and the cited PDF pages; institution attribution m
 
 All five local automated checks passed on 25 November. The existing public repository is `https://github.com/NabsCodes/studycheck`, at application commit `b2617986c9e092168b9dce3a31fd0081b3e40277`. Fresh-clone frozen installation, tests, build and local production HTTP checks passed for that commit. The current application source matches it; latest documentation/figure files remain local. This corrects the earlier assumption that no public repository existed, without asserting when or by whom it was published.
 
-Still required: remaining expanded rubric/upload checks, final interactive sign-off, publishing the current documentation/figure changes with Hassan's authorisation, real repository/README/development-record and exact version links in the report, final export review, and Canvas submission/receipt. No new push, deployment, submitted version or Canvas submission occurred in this stage.
+Still required: remaining expanded rubric/upload checks, final interactive sign-off, Hassan pushing the current documentation/figure changes himself, real repository/README/development-record and exact version links in the report, final export review, and Canvas submission/receipt. No new push, deployment, submitted version or Canvas submission occurred in this stage.
+
+The README now describes the repository contents and prototype scope for a marker. Temporary publication/submission tasks remain in the project notes. Hassan has said he will perform the push himself; no push has been made in this stage. After his push, verify the actual remote commit before using its version links in the report.
+
+## Submission snapshot preparation
+
+Hassan's public push was verified at `3fed9a0fd4640ce93cb23f1b80544500f2ecfeeb`, including all figure assets. The last five README/record edits remain to be included in a final documentation snapshot and pushed by Hassan. The report will link that exact snapshot, rather than silently identifying a version with the earlier README wording. App source is unchanged. The final exported files and their render/hash evidence are kept in the IIS workspace and OneDrive, outside the code repository. Canvas is still unsubmitted; full expanded descriptors/upload restrictions have not been newly verified.

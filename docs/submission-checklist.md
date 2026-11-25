@@ -51,7 +51,7 @@ Still needed: final evidence, reproducible repository inspection and the designa
 - [ ] Record each remaining stage's decisions, failures, corrections and checks; update the README and its word count.
 - [ ] Run the final formatting, lint, types, tests and build; inspect keyboard/focus, narrow screens, notes, reset and review.
 - [x] Verify fresh-clone frozen installation, ten tests, production build and HTTP serving for public application commit `b261798`; keep the later local documentation/figure changes explicit.
-- [ ] The repository already exists publicly. Obtain authorisation to push the prepared documentation/figures, then verify the final repository/README/development-record links and designate the submitted version.
+- [ ] The repository already exists publicly. Hassan will push the prepared documentation/figures himself; then verify the final repository/README/development-record links and designate the submitted version.
 - [ ] Keep original, adapted and AI-assisted contributions clear in the report and repository.
 
 ## Working timeline
@@ -105,7 +105,7 @@ Exit: a complete report draft about the developed version, with genuine limitati
 
 - [ ] Reconcile app, figures, report, README, development record and references.
 - [ ] Verify a fresh-checkout setup, final checks and files intended for publication; exclude credentials and generated dependency/build folders.
-- [ ] With Hassan's authorisation, push the current documentation/figure update to the existing public repository, verify access, and designate the submission commit or release.
+- [ ] Hassan pushes the current documentation/figure update to the existing public repository; then verify access and designate the submission commit or release.
 - [ ] Insert real repository/README links and that version into the report. Export and visually inspect the PDF, including counts and links.
 
 Exit: a reproducible, linked submission package ready one day early. Hosting the app and producing a video are not required by the recorded brief.

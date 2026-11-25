@@ -1,6 +1,6 @@
 # StudyCheck
 
-README prose word count: 991
+README prose word count: 961
 
 **Hassan Umar Hassan** · MSc Intelligent Interactive Systems · University of Birmingham
 
@@ -22,7 +22,7 @@ The student chooses a condition before starting, saves an initial answer, sees t
 
 Advice and claim flags are scripted. There is no live AI model, automatic error detector or retrieval service. Records stay in browser memory and clear on restart or refresh. Opening notes does not prove they were read; changing an answer does not establish learning or a warning effect. No participant study has been conducted.
 
-The app is available in the [public repository](https://github.com/NabsCodes/studycheck). The latest figures and documentation are awaiting a push. The report is prepared separately for Canvas and still needs its final repository/version links and submission checks. No accompanying ZIP is currently needed. See the [submission checklist](docs/submission-checklist.md) for remaining work.
+The application, system diagram and illustrated examples are included in this [repository](https://github.com/NabsCodes/studycheck). The project report is prepared separately for Canvas; no accompanying ZIP is needed.
 
 ## Run locally
 
@@ -73,7 +73,7 @@ The [system diagram and architecture notes](docs/architecture-and-examples.md) e
 
 The [development record](docs/development-record.md) explains significant decisions, corrections and checks. Development included replacing the focus effect with a keyed heading and callback ref to retain stage focus without the effect, using standard Next.js font loading after my feedback, and replacing schematic summaries with screenshots so the notes and submission controls can be inspected. Git milestones include [the first complete task](https://github.com/NabsCodes/studycheck/commit/13fb206), [interface refinement](https://github.com/NabsCodes/studycheck/commit/ffd4525) and [font changes](https://github.com/NabsCodes/studycheck/commit/fd7d9bc).
 
-On 25 November 2026, formatting, lint, types, all ten tests and the production build passed. A fresh clone of application commit `b261798` installed from the lockfile, passed the tests, built and served successfully. Later local documentation and figures are outside that remote commit.
+On 25 November 2026, formatting, lint, types, all ten tests and the production build passed. A fresh clone of the application at commit `b261798` installed from the lockfile, passed the tests, built and served successfully.
 
 ```bash
 pnpm format:check

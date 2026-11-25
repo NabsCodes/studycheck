@@ -12,3 +12,5 @@ alwaysApply: true
 - Before final submission, reconcile README, report, diagram and storyboards with the implemented version, and add the real repository/README links and submitted commit or release once designated.
 
 - End each user-facing turn about this project with a short completed/remaining checklist, as Hassan requested. Keep it current and distinguish prepared review artefacts from final publication or submission.
+
+- Hassan handles GitHub pushes himself. Prepare and check the files locally; do not push unless he explicitly delegates that action.
