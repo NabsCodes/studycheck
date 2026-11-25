@@ -10,3 +10,5 @@ alwaysApply: true
 - Record significant decisions, AI-assisted adaptations and checks actually performed. Preserve dated history; do not invent results or label old checks as new.
 - Recalculate the README prose word count after prose edits, verify affected relative links and run the documentation formatting check.
 - Before final submission, reconcile README, report, diagram and storyboards with the implemented version, and add the real repository/README links and submitted commit or release once designated.
+
+- End each user-facing turn about this project with a short completed/remaining checklist, as Hassan requested. Keep it current and distinguish prepared review artefacts from final publication or submission.

@@ -1,0 +1,206 @@
+{
+  "captureDate": "2026-11-24",
+  "kind": "scripted-developer-walkthrough",
+  "sourceCommit": "b2617986c9e092168b9dce3a31fd0081b3e40277",
+  "sourceBuild": "ijAr4oy7tNFaoYTfq13Sh",
+  "imageTreatment": "Original full-page JPEGs preserved byte-for-byte; SVG viewBox crops with annotations outside screenshots. No UI text or selected control was redrawn.",
+  "records": [
+    {
+      "id": "task-01",
+      "review": "Example\nTask 01\nAnswer changed\nYes · changed the choice\nNotes opened before submission\nYes\nFinal answer matches the expected answer\nYes\nReminder style\nClaim-specific message"
+    },
+    {
+      "id": "task-02",
+      "review": "Example\nTask 02\nAnswer changed\nNo · kept the same choice\nNotes opened before submission\nNo\nFinal answer matches the expected answer\nYes\nReminder style\nGeneral reminder"
+    },
+    {
+      "id": "task-03",
+      "review": "Example\nTask 03\nAnswer changed\nYes · changed the choice\nNotes opened before submission\nNo\nFinal answer matches the expected answer\nNo\nReminder style\nClaim-specific message"
+    }
+  ],
+  "frames": [
+    {
+      "name": "task-01-initial",
+      "file": "task-01-initial.jpg",
+      "width": 1280,
+      "height": 800,
+      "sha256": "0e38942513d638e13d80b521aec105cc49ba0c2ecb541dbb579afaceb3756ba5"
+    },
+    {
+      "name": "task-01-advice-closed",
+      "file": "task-01-advice-closed.jpg",
+      "width": 1280,
+      "height": 1044,
+      "sha256": "b26dffe338a4b7c436877b5331f1ce6fb698100aa9ec8a4c54b178f932202ed6"
+    },
+    {
+      "name": "task-01-notes-open",
+      "file": "task-01-notes-open.jpg",
+      "width": 1280,
+      "height": 1534,
+      "sha256": "432d721916d9a43937d27b13a44d88109a358f97c8f751f637a767b2c0894abc"
+    },
+    {
+      "name": "task-01-final-ready",
+      "file": "task-01-final-ready.jpg",
+      "width": 1280,
+      "height": 1534,
+      "sha256": "4b6d041169faea66f232b141ce78904f749f610cc0caabd3ef8dfd35aab0b53d"
+    },
+    {
+      "name": "task-01-review",
+      "file": "task-01-review.jpg",
+      "width": 1280,
+      "height": 1297,
+      "sha256": "da2d7ee5de928ebbb71a3f31d503c044820b427f33e45af5a3cb7c32c267d7f0"
+    },
+    {
+      "name": "task-02-initial",
+      "file": "task-02-initial.jpg",
+      "width": 1280,
+      "height": 800,
+      "sha256": "45afa50442736b01893cfcc02da07d33aa9117a7b1c500ecf2d4b49c8846b9a7"
+    },
+    {
+      "name": "task-02-decision",
+      "file": "task-02-decision.jpg",
+      "width": 1280,
+      "height": 1044,
+      "sha256": "a57209588d28bfdaa77d9f8452964e8d0e9ac612eb83a67ac5e4fcef32e1a5dc"
+    },
+    {
+      "name": "task-02-review",
+      "file": "task-02-review.jpg",
+      "width": 1280,
+      "height": 1297,
+      "sha256": "494abca523164dabc832dc89de434af0e1a6ca0fdd54157f4e3189732fd7c729"
+    },
+    {
+      "name": "task-03-initial",
+      "file": "task-03-initial.jpg",
+      "width": 1280,
+      "height": 800,
+      "sha256": "6a4326facc934613813216039f8e439965f91823f5053d3febeb00922bcb7e94"
+    },
+    {
+      "name": "task-03-decision",
+      "file": "task-03-decision.jpg",
+      "width": 1280,
+      "height": 1044,
+      "sha256": "83572b27386d17a1862ca835cb2c82eef768fb80389b77e3e4d2919c045e28b1"
+    },
+    {
+      "name": "task-03-review",
+      "file": "task-03-review.jpg",
+      "width": 1280,
+      "height": 1297,
+      "sha256": "116ea791277c576457653b72d98949400d5f396f8d3b0eeda07362ff0df99030"
+    }
+  ],
+  "figures": [
+    {
+      "id": "task-01",
+      "file": "task-01-walkthrough.svg",
+      "width": 1000,
+      "height": 2095,
+      "crops": [
+        {
+          "step": "1. Save an independent Yes",
+          "frame": "task-01-initial",
+          "sourceBox": [305, 445, 306, 195]
+        },
+        {
+          "step": "2. Inspect advice and warning",
+          "frame": "task-01-advice-closed",
+          "sourceBox": [305, 508, 500, 375]
+        },
+        {
+          "step": "3. Open the optional lecture notes",
+          "frame": "task-01-advice-closed",
+          "sourceBox": [305, 827, 306, 60]
+        },
+        {
+          "step": "3. Open the optional lecture notes",
+          "frame": "task-01-notes-open",
+          "sourceBox": [325, 910, 455, 235]
+        },
+        {
+          "step": "4. Select No and submit",
+          "frame": "task-01-final-ready",
+          "sourceBox": [838, 548, 320, 300]
+        },
+        {
+          "step": "5. Inspect the saved review",
+          "frame": "task-01-review",
+          "sourceBox": [305, 300, 850, 360]
+        }
+      ]
+    },
+    {
+      "id": "task-02",
+      "file": "task-02-walkthrough.svg",
+      "width": 1000,
+      "height": 1290,
+      "crops": [
+        {
+          "step": "1. Save an independent No",
+          "frame": "task-02-initial",
+          "sourceBox": [305, 445, 570, 195]
+        },
+        {
+          "step": "2. Inspect advice and reminder",
+          "frame": "task-02-decision",
+          "sourceBox": [305, 508, 500, 375]
+        },
+        {
+          "step": "3. Submit No without notes",
+          "frame": "task-02-decision",
+          "sourceBox": [838, 548, 320, 300]
+        },
+        {
+          "step": "4. Inspect the saved review",
+          "frame": "task-02-review",
+          "sourceBox": [305, 300, 850, 360]
+        },
+        {
+          "step": "4. Inspect the saved review",
+          "frame": "task-02-review",
+          "sourceBox": [305, 790, 850, 130]
+        }
+      ]
+    },
+    {
+      "id": "task-03",
+      "file": "task-03-walkthrough.svg",
+      "width": 1000,
+      "height": 1290,
+      "crops": [
+        {
+          "step": "1. Save an independent No",
+          "frame": "task-03-initial",
+          "sourceBox": [305, 445, 570, 195]
+        },
+        {
+          "step": "2. Inspect advice and reminder",
+          "frame": "task-03-decision",
+          "sourceBox": [305, 508, 500, 375]
+        },
+        {
+          "step": "3. Submit Yes without notes",
+          "frame": "task-03-decision",
+          "sourceBox": [838, 548, 320, 300]
+        },
+        {
+          "step": "4. Inspect the saved review",
+          "frame": "task-03-review",
+          "sourceBox": [305, 300, 850, 360]
+        },
+        {
+          "step": "4. Inspect the saved review",
+          "frame": "task-03-review",
+          "sourceBox": [305, 790, 850, 130]
+        }
+      ]
+    }
+  ]
+}

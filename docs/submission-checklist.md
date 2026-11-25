@@ -1,10 +1,10 @@
 # StudyCheck A2: rubric and submission checklist
 
-Author: Hassan Umar Hassan. Status reviewed 19 November 2026, Europe/London.
+Author: Hassan Umar Hassan. Status reviewed 25 November 2026, Europe/London.
 
-Working deadline: **Wednesday 25 November 2026**, reported by Hassan on 19 November. The revised cutoff time has not been confirmed; do not assume the former 21:00 cutoff. Aim to finish on 24 November and use the 25th for submission and recovery time.
+Deadline: **Wednesday 25 November 2026 at 21:00 UK time**, rechecked in the signed-in Canvas assignment body on 25 November. Complete the remaining links and final checks before submitting today.
 
-This plan replaces the old 20 November working schedule. Task 01 is verified by Hassan. The case-specification and implementation stages originally targeted for 20–21 November were completed early on 19 November with developer checks; diagram, storyboard and report stages remain outstanding. Rubric weights and requirements come from the A2 brief inspection recorded on 16 November and the supplied handoff. Detailed descriptors below are paraphrases, not a new live Canvas check. Dates are proposed work targets, not completed work or availability commitments. Criterion coverage does not predict awarded marks.
+The interaction, diagram, three illustrated examples and twelve-page report review copy are prepared. Hassan accepted the requested formatting and asked to proceed. The report has been copied into the OneDrive assignment folder; the app remains outside OneDrive. The full brief and rubric weights were rechecked on 25 November. Expanded rubric descriptions and upload file-type restrictions remain open. The repository already exists publicly at application commit `b261798`; latest documentation/figure changes remain local. No new push or submission occurred. Historical target dates below are not completion dates. Coverage does not predict awarded marks.
 
 ## Rubric mapping
 
@@ -12,33 +12,35 @@ This plan replaces the old 20 November working schedule. Task 01 is verified by 
 
 Present: A1 problem, a source-supported Task 01, controlled warning conditions and documented scope/limitations.
 
-Still needed: explain the final decisions in the report, connect them to verified A1 literature and named Weeks 1–4 concepts, and justify the simulation and small scenario set.
+Present: the assembled copy contains 173 abstract and 1,052 rationale words, integrates the figures and connects verified A1/research/lecture concepts to decisions. Hassan accepted the prose and formatting. Remaining checks concern the final linked version and submission.
 
-- [ ] Explain why initial and final answers are separate, notes are optional, and advice stays fixed.
-- [ ] Explain the limits of a claim-specific hint, preselected notes and repeated questions.
-- [ ] Describe actual development changes and alternatives, with source support rather than claimed user benefits.
+- [x] Explain why initial and final answers are separate, notes are optional, and advice stays fixed.
+- [x] Explain the limits of a claim-specific hint, preselected notes and repeated questions.
+- [x] Describe actual development changes and alternatives, with source support rather than claimed user benefits.
 
 ### Developed interaction: 30 marks
 
 Present: all three scripted variants run end to end under both conditions, with optional notes, preserved initial answers and appropriate review. Task 01 is verified by Hassan; the added variants have developer checks. Advice and claim flagging are visibly simulated.
 
-Still needed: prepare two or three illustrated interaction examples from the developed cases. Three distinct content cases are our chosen coverage, not a separately stated requirement for three app tasks.
+Present: three annotated screenshot walkthroughs now show the notes-access and final-submission controls. Present: examples are integrated into the Word/PDF review copy and their rendered pages have been inspected. Still needed: final assembled-copy review and remaining submission links/checks. Three distinct content cases are our chosen coverage, not a separately stated requirement for three app tasks.
 
 - [x] Hassan confirmed that Task 01 was already verified. This records his confirmation, without inventing details of his walkthrough.
 - [x] Verify correct-advice and misleading-warning content against exact source passages.
 - [x] Implement the remaining cases with appropriate review wording; a correct claim must not be described as an error.
 - [x] Check both conditions for each case, identical question/advice/notes/access controls within each comparison, and isolated session records.
-- [ ] Produce two or three illustrated action–response–feedback/control walkthroughs from developed screens.
+- [x] Produce two or three illustrated action–response–feedback/control walkthroughs from developed screens.
+- [x] Replace primary schematic summaries with actual screenshot excerpts showing notes access and final submission.
 
 ### Architecture and technical reasoning: 20 marks
 
 Present: typed content, a keyed example workspace, explicit stages/reducer, shared presentation components, case-aware review logic, a state hook and in-memory events. Technology roles are explained in the README.
 
-Still needed: a diagram and concise technical explanation matching the final code.
+Present: the revised diagram groups task content, session logic/review and interface responsibilities, with a clear simulated AI inset and student action/feedback loop. Present: it is integrated with the technical explanation and checked in the assembled review copy.
 
-- [ ] Diagram the student, controls, scenario content, reducer/state, notes and review, with information/control arrows.
-- [ ] Label fixed advice and claim flagging as simulated; distinguish implemented and planned parts.
-- [ ] Explain the Next.js/React choice and why no live model, database or retrieval pipeline is needed for this prototype.
+- [x] Diagram the student, controls, scenario content, reducer/state, notes and review, with information/control arrows.
+- [x] Simplify the diagram for report-size readability, keeping lower-level implementation details in the project notes.
+- [x] Label fixed advice and claim flagging as simulated; distinguish implemented and planned parts.
+- [x] Explain the Next.js/React choice and why no live model, database or retrieval pipeline is needed for this prototype.
 
 ### Development evidence and authorship: 20 marks
 
@@ -48,8 +50,8 @@ Still needed: final evidence, reproducible repository inspection and the designa
 
 - [ ] Record each remaining stage's decisions, failures, corrections and checks; update the README and its word count.
 - [ ] Run the final formatting, lint, types, tests and build; inspect keyboard/focus, narrow screens, notes, reset and review.
-- [ ] Check setup from a fresh checkout with the committed lockfile; distinguish developer walkthroughs from participant findings.
-- [ ] Obtain Hassan's authorisation for the concrete public GitHub publication, then verify repository/README links and identify the exact submitted commit or release.
+- [x] Verify fresh-clone frozen installation, ten tests, production build and HTTP serving for public application commit `b261798`; keep the later local documentation/figure changes explicit.
+- [ ] The repository already exists publicly. Obtain authorisation to push the prepared documentation/figures, then verify the final repository/README/development-record links and designate the submitted version.
 - [ ] Keep original, adapted and AI-assisted contributions clear in the report and repository.
 
 ## Working timeline
@@ -82,18 +84,20 @@ Exit: the intended prototype scope works. Freeze new features afterwards unless 
 
 ### Sunday 22 November: diagram and illustrated examples
 
-- [ ] Create the architecture diagram from actual components and flows.
-- [ ] Capture two or three developed interactions, including helpful and misleading warning behaviour where appropriate.
-- [ ] Label simulations, synthetic walkthrough records and source evidence accurately.
+- [x] Create the architecture diagram from actual components and flows.
+- [x] Capture two or three developed interactions, including helpful and misleading warning behaviour where appropriate.
+- [x] Label simulations, synthetic walkthrough records and source evidence accurately.
 
 Exit: figures explain actions, responses and human control without implying a live detector or participant study.
 
 ### Monday 23 November: report and references
 
-- [ ] Draft approximately 1,000 main-report words plus a roughly 200-word abstract.
-- [ ] Check abstract maximum 300 and main explanation maximum 1,100; keep the combined draft near 1,200 because the recorded brief also contains a 1,300-word stopping rule.
-- [ ] Connect design choices to A1, verified sources and named lecture concepts; include the figures and acknowledgement.
-- [ ] Put the counted total on page one. Do not hide explanatory prose in images.
+- [x] Draft the report prose: 1,040 rationale words and 173 abstract words, including headings/acknowledgement, 1,213 combined.
+- [x] Integrate the diagram, three illustrated examples and formatted references into a Word/PDF review copy; inspect all twelve rendered pages after the Times New Roman/APA abstract revision.
+- [ ] Review the assembled copy and add genuine repository/version links before final sign-off.
+- [x] Check abstract maximum 300 and main explanation maximum 1,100; keep the combined draft near 1,200 because the recorded brief also contains a 1,300-word stopping rule.
+- [x] Connect design choices to A1, verified sources and named lecture concepts; include the figures and acknowledgement.
+- [x] Put the assembled count on page one: 173 abstract + 1,052 rationale = 1,225 words, including headings/acknowledgement and figure pointers. Figure labels/captions and references are excluded.
 
 Exit: a complete report draft about the developed version, with genuine limitations and no invented results.
 
@@ -101,14 +105,16 @@ Exit: a complete report draft about the developed version, with genuine limitati
 
 - [ ] Reconcile app, figures, report, README, development record and references.
 - [ ] Verify a fresh-checkout setup, final checks and files intended for publication; exclude credentials and generated dependency/build folders.
-- [ ] With Hassan's authorisation, publish the required public GitHub repository, verify access, and designate the submission commit or release.
+- [ ] With Hassan's authorisation, push the current documentation/figure update to the existing public repository, verify access, and designate the submission commit or release.
 - [ ] Insert real repository/README links and that version into the report. Export and visually inspect the PDF, including counts and links.
 
 Exit: a reproducible, linked submission package ready one day early. Hosting the app and producing a video are not required by the recorded brief.
 
 ### Wednesday 25 November: submit and verify
 
-- [ ] Confirm the revised exact cutoff time and submission requirements in Canvas.
+- [x] Confirm the revised cutoff: the Canvas course assignment entry shows 25 November at 21:00.
+- [x] Reopen and read the full current assignment body and rubric weights on 25 November.
+- [ ] Read the remaining expanded rubric descriptors and confirm upload file-type acceptance; current UI controls did not complete these checks.
 - [ ] Submit the final report before the cutoff; include a ZIP only for necessary material that cannot reasonably go in the repository and explain it in the README.
 - [ ] Reopen the uploaded report, verify its version and links, and retain the submission receipt.
 
@@ -116,9 +122,20 @@ Exit: verified submission, not merely a locally prepared PDF. Any last-minute co
 
 ## Source and evidence pointers
 
+- [HTML figure pack](illustrated-examples.html) and [architecture notes](architecture-and-examples.md): completed on 24 November.
 - [README](../README.md): current status, running instructions and AI assistance.
 - [Development record](development-record.md): dated decisions and performed checks.
 - [Task 01 notes](task-01.md): source pages and interpretation limits.
 - [A2 Canvas assignment](https://canvas.bham.ac.uk/courses/90253/assignments/633325): authoritative current requirements; university sign-in may be required.
 
-Next action: prepare the architecture diagram and two or three illustrated walkthroughs from the developed cases. Hassan has already verified Task 01; no repeat walkthrough is requested. Update this checklist as stages actually finish.
+Next action: finish the remaining expanded-rubric/upload checks and prepare the documentation/figure update for the existing public repository, then add its real final version links to the report. Hassan has already verified Task 01; no repeat walkthrough is requested. Update this checklist as stages actually finish.
+
+## Verification completed on 25 November
+
+- [x] Copy the unchanged Times New Roman Word/PDF review files into OneDrive `Assignments/A2/Report`; verify matching hashes.
+- [x] Run formatting, ESLint, typecheck, ten tests and production build successfully on the current Desktop source.
+- [x] Install, test, build and serve a fresh clone of the existing public application commit.
+- [x] Re-read all cited lecture pages and check paper author/publication metadata.
+- [ ] Complete remaining interactive/rubric/upload checks and synchronise latest documentation/figure changes.
+- [ ] Insert the verified submitted version links, export/review the final report and refresh the OneDrive copies.
+- [ ] Submit on Canvas and retain the receipt.

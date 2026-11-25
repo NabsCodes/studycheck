@@ -1,0 +1,136 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1000"
+  height="820"
+  viewBox="0 0 1000 820"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">StudyCheck system diagram</title>
+  <desc id="desc">
+    The student sends choices to the study interface and receives advice and
+    feedback. Local task content supplies the question, notes and fixed
+    simulated AI advice. Its answer key also supplies the session logic and
+    review. The interface sends actions to that logic and receives state and
+    feedback. Session logic preserves the initial choice and records actions in
+    browser memory. Notes are optional and the final answer requires submission.
+    AI advice and claim flags are authored simulations; no live model or error
+    detector runs.
+  </desc>
+  <defs>
+    <marker
+      id="arrow"
+      viewBox="0 0 10 10"
+      refX="9"
+      refY="5"
+      markerWidth="7"
+      markerHeight="7"
+      orient="auto-start-reverse"
+    >
+      <path d="M0 0L10 5L0 10Z" fill="#222" />
+    </marker>
+  </defs>
+  <style>
+    text {
+      font-family: Arial, Helvetica, sans-serif;
+      fill: #171717;
+      font-size: 22px;
+    }
+    .heading {
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .label {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .small {
+      font-size: 20px;
+    }
+    .node {
+      fill: #fff;
+      stroke: #222;
+      stroke-width: 1.7;
+    }
+    .edge {
+      fill: none;
+      stroke: #222;
+      stroke-width: 1.7;
+      marker-end: url(#arrow);
+    }
+  </style>
+  <rect width="1000" height="820" fill="#fff" />
+  <text class="heading" x="30" y="38">
+    StudyCheck: components and information flow
+  </text>
+  <rect
+    x="220"
+    y="78"
+    width="760"
+    height="625"
+    fill="#fff"
+    stroke="#777"
+    stroke-width="1.3"
+  />
+  <text class="small" x="240" y="102">Implemented browser application</text>
+  <rect class="node" x="250" y="125" width="330" height="220" />
+  <text class="label" x="270" y="159">Local task content</text>
+  <text x="270" y="194">Question, notes and key</text>
+  <rect
+    x="270"
+    y="218"
+    width="290"
+    height="106"
+    fill="#fff"
+    stroke="#222"
+    stroke-width="1.7"
+    stroke-dasharray="7 5"
+  />
+  <text class="label" x="285" y="250">Simulated AI behaviour</text>
+  <text class="small" x="285" y="281">Fixed advice + claim flag</text>
+  <text class="small" x="285" y="307">No model or detector runs</text>
+  <rect class="node" x="630" y="125" width="320" height="220" />
+  <text class="label" x="650" y="159">Session logic + review</text>
+  <text x="650" y="194">Checks allowed steps</text>
+  <text x="650" y="228">Preserves initial choice</text>
+  <text x="650" y="262">Records actions in memory</text>
+  <text x="650" y="296">Checks advice against key</text>
+  <path class="edge" d="M580 181H630" />
+  <text class="small" x="588" y="168">Key</text>
+  <path class="edge" d="M550 345V475" />
+  <text class="small" x="260" y="391">Question, advice,</text>
+  <text class="small" x="260" y="418">warning and notes</text>
+  <path class="edge" d="M875 475V345" />
+  <text class="small" x="884" y="411">Actions</text>
+  <path class="edge" d="M690 345V475" />
+  <text class="small" x="701" y="395">State +</text>
+  <text class="small" x="701" y="422">feedback</text>
+  <rect class="node" x="250" y="475" width="700" height="195" />
+  <text class="label" x="270" y="511">Study interface (React)</text>
+  <text x="270" y="546">Setup: example + reminder condition</text>
+  <text x="270" y="578">Initial answer → Advice + warning → Final answer</text>
+  <text x="270" y="610">
+    Optional notes with a link to the original lecture
+  </text>
+  <text x="270" y="642">
+    Review shows choices, notes access and advice check
+  </text>
+  <rect class="node" x="20" y="490" width="140" height="140" />
+  <text class="label" x="35" y="524">Student</text>
+  <text class="small" x="35" y="560">Chooses and</text>
+  <text class="small" x="35" y="587">submits</text>
+  <path class="edge" d="M160 540H250" />
+  <rect x="159" y="512" width="89" height="23" fill="#fff" />
+  <text class="small" x="169" y="529">Choices</text>
+  <path class="edge" d="M250 607H160" />
+  <rect x="158" y="574" width="90" height="25" fill="#fff" />
+  <text class="small" x="163" y="593" style="font-size: 18px">Feedback</text>
+  <text class="small" x="30" y="743">
+    Solid boxes: implemented parts. Dashed box: authored simulation of AI
+    behaviour.
+  </text>
+  <text class="small" x="30" y="775">
+    No live generation, retrieval, error detection or persistent storage is
+    implemented.
+  </text>
+</svg>

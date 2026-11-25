@@ -1,0 +1,267 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1400"
+  height="780"
+  viewBox="0 0 1400 780"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Task 03: A false alarm on a supported claim</title>
+  <desc id="desc">
+    Schematic of a scripted developer walkthrough: initial answer No, AI
+    recommends No, notes opened No, final answer Yes. Expected answer No. Yes
+    was deliberately selected for this scripted failure path. It does not show
+    that the warning caused an error.
+  </desc>
+  <defs>
+    <marker
+      id="arrow"
+      viewBox="0 0 10 10"
+      refX="9"
+      refY="5"
+      markerWidth="7"
+      markerHeight="7"
+      orient="auto"
+    >
+      <path d="M0 0L10 5L0 10Z" fill="#41574a" />
+    </marker>
+  </defs>
+  <rect width="1400" height="780" fill="#fff" />
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="40" y="40" font-size="28" font-weight="600" fill="#23352a">
+      Task 03: A false alarm on a supported claim
+    </text>
+    <text x="40" y="74" font-size="19" font-weight="400" fill="#59665d">
+      Claim-specific message · Expected answer: No
+    </text>
+    <rect
+      x="40"
+      y="100"
+      width="420"
+      height="580"
+      rx="10"
+      fill="#fafbf8"
+      stroke="#9cab9e"
+      stroke-width="1.5"
+    />
+    <rect
+      x="490"
+      y="100"
+      width="420"
+      height="580"
+      rx="10"
+      fill="#fafbf8"
+      stroke="#9cab9e"
+      stroke-width="1.5"
+    />
+    <rect
+      x="940"
+      y="100"
+      width="420"
+      height="580"
+      rx="10"
+      fill="#fafbf8"
+      stroke="#9cab9e"
+      stroke-width="1.5"
+    />
+    <text x="60" y="145" font-size="24" font-weight="600" fill="#23352a">
+      1 · Independent answer
+    </text>
+    <text x="60" y="197" font-size="16" font-weight="400" fill="#59665d">
+      Question summary
+    </text>
+    <text x="60" y="228" font-size="19" font-weight="400" fill="#23352a">
+      Does a working citation alone
+    </text>
+    <text x="60" y="252" font-size="19" font-weight="400" fill="#23352a">
+      establish support for an answer?
+    </text>
+    <rect
+      x="60"
+      y="284"
+      width="380"
+      height="48"
+      rx="6"
+      fill="#fff"
+      stroke="#aebbb0"
+    />
+    <circle
+      cx="83"
+      cy="308"
+      r="8"
+      fill="#fff"
+      stroke="#41574a"
+      stroke-width="1.5"
+    />
+    <text x="105" y="315" font-size="21" font-weight="400" fill="#23352a">
+      Yes
+    </text>
+    <rect
+      x="60"
+      y="346"
+      width="380"
+      height="48"
+      rx="6"
+      fill="#e8f0e8"
+      stroke="#aebbb0"
+    />
+    <circle
+      cx="83"
+      cy="370"
+      r="8"
+      fill="#fff"
+      stroke="#41574a"
+      stroke-width="1.5"
+    />
+    <circle cx="83" cy="370" r="4" fill="#315c45" />
+    <text x="105" y="377" font-size="21" font-weight="400" fill="#23352a">
+      No
+    </text>
+    <rect
+      x="60"
+      y="408"
+      width="380"
+      height="48"
+      rx="6"
+      fill="#fff"
+      stroke="#aebbb0"
+    />
+    <circle
+      cx="83"
+      cy="432"
+      r="8"
+      fill="#fff"
+      stroke="#41574a"
+      stroke-width="1.5"
+    />
+    <text x="105" y="439" font-size="21" font-weight="400" fill="#23352a">
+      Not sure
+    </text>
+    <rect x="60" y="600" width="380" height="48" rx="6" fill="#e8f0e8" />
+    <text x="80" y="631" font-size="21" font-weight="600" fill="#23352a">
+      User saves No
+    </text>
+    <text x="510" y="145" font-size="24" font-weight="600" fill="#23352a">
+      2 · Advice and decision
+    </text>
+    <text x="510" y="185" font-size="20" font-weight="600" fill="#23352a">
+      Simulated AI recommends No
+    </text>
+    <text x="510" y="223" font-size="18" font-weight="400" fill="#23352a">
+      Citing a real, current source does not
+    </text>
+    <text x="510" y="246" font-size="18" font-weight="400" fill="#23352a">
+      guarantee that the answer is supported
+    </text>
+    <text x="510" y="269" font-size="18" font-weight="400" fill="#23352a">
+      by the cited passage.
+    </text>
+    <rect
+      x="510"
+      y="338"
+      width="380"
+      height="174"
+      rx="6"
+      fill="#f8f2e6"
+      stroke="#b5a37b"
+    />
+    <text x="525" y="365" font-size="17" font-weight="600" fill="#23352a">
+      Reliability reminder
+    </text>
+    <text x="525" y="394" font-size="16" font-weight="400" fill="#23352a">
+      The claim that a real, current citation
+    </text>
+    <text x="525" y="416" font-size="16" font-weight="400" fill="#23352a">
+      cannot guarantee support may be mistaken.
+    </text>
+    <text x="525" y="438" font-size="16" font-weight="400" fill="#23352a">
+      You can consult the lecture notes before
+    </text>
+    <text x="525" y="460" font-size="16" font-weight="400" fill="#23352a">
+      deciding. This warning may itself be
+    </text>
+    <text x="525" y="482" font-size="16" font-weight="400" fill="#23352a">
+      mistaken.
+    </text>
+    <text x="510" y="548" font-size="20" font-weight="400" fill="#23352a">
+      Notes opened: No
+    </text>
+    <rect x="510" y="600" width="380" height="48" rx="6" fill="#e8f0e8" />
+    <text x="530" y="631" font-size="21" font-weight="600" fill="#23352a">
+      Final selection: Yes
+    </text>
+    <text x="960" y="145" font-size="24" font-weight="600" fill="#23352a">
+      3 · Submitted review
+    </text>
+    <text x="960" y="208" font-size="18" font-weight="400" fill="#23352a">
+      Initial answer
+    </text>
+    <text x="1300" y="208" font-size="21" font-weight="600" fill="#23352a">
+      No
+    </text>
+    <line x1="960" x2="1340" y1="222" y2="222" stroke="#d7ded4" />
+    <text x="960" y="256" font-size="18" font-weight="400" fill="#23352a">
+      Final answer
+    </text>
+    <text x="1300" y="256" font-size="21" font-weight="600" fill="#23352a">
+      Yes
+    </text>
+    <line x1="960" x2="1340" y1="270" y2="270" stroke="#d7ded4" />
+    <text x="960" y="304" font-size="18" font-weight="400" fill="#23352a">
+      Answer changed
+    </text>
+    <text x="1300" y="304" font-size="21" font-weight="600" fill="#23352a">
+      Yes
+    </text>
+    <line x1="960" x2="1340" y1="318" y2="318" stroke="#d7ded4" />
+    <text x="960" y="352" font-size="18" font-weight="400" fill="#23352a">
+      Notes opened
+    </text>
+    <text x="1300" y="352" font-size="21" font-weight="600" fill="#23352a">
+      No
+    </text>
+    <line x1="960" x2="1340" y1="366" y2="366" stroke="#d7ded4" />
+    <text x="960" y="400" font-size="18" font-weight="400" fill="#23352a">
+      Matches expected answer
+    </text>
+    <text x="1300" y="400" font-size="21" font-weight="600" fill="#23352a">
+      No
+    </text>
+    <line x1="960" x2="1340" y1="414" y2="414" stroke="#d7ded4" />
+    <text x="960" y="478" font-size="17" font-weight="600" fill="#23352a">
+      System feedback
+    </text>
+    <text x="960" y="511" font-size="20" font-weight="400" fill="#23352a">
+      A simulated false alarm is
+    </text>
+    <text x="960" y="538" font-size="20" font-weight="400" fill="#23352a">
+      identified.
+    </text>
+    <rect x="960" y="600" width="380" height="48" rx="6" fill="#e8f0e8" />
+    <text x="980" y="631" font-size="21" font-weight="600" fill="#23352a">
+      User submits Yes
+    </text>
+    <path
+      d="M463 315H487"
+      fill="none"
+      stroke="#41574a"
+      stroke-width="2"
+      marker-end="url(#arrow)"
+    />
+    <path
+      d="M913 315H937"
+      fill="none"
+      stroke="#41574a"
+      stroke-width="2"
+      marker-end="url(#arrow)"
+    />
+    <text x="40" y="718" font-size="17" font-weight="400" fill="#59665d">
+      Scripted developer walkthrough · 24 November 2026 · Schematic of developed
+      states; full screenshots supplied.
+    </text>
+    <text x="40" y="750" font-size="17" font-weight="400" fill="#59665d">
+      Yes was deliberately selected for this scripted failure path. It does not
+      show that the warning caused an error.
+    </text>
+  </g>
+</svg>

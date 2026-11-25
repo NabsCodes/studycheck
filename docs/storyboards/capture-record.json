@@ -1,0 +1,97 @@
+{
+  "captureDate": "2026-11-24",
+  "kind": "scripted-developer-walkthrough",
+  "sourceCommit": "b2617986c9e092168b9dce3a31fd0081b3e40277",
+  "records": [
+    {
+      "id": "task-01",
+      "condition": "claim-specific",
+      "initial": "Yes",
+      "final": "No",
+      "notes": true,
+      "facts": {
+        "Answer changed": "Yes \u00b7 changed the choice",
+        "Example": "Task 01",
+        "Final answer matches the expected answer": "Yes",
+        "Notes opened before submission": "Yes",
+        "Reminder style": "Claim-specific message"
+      }
+    },
+    {
+      "id": "task-02",
+      "condition": "general",
+      "initial": "No",
+      "final": "No",
+      "notes": false,
+      "facts": {
+        "Answer changed": "No \u00b7 kept the same choice",
+        "Example": "Task 02",
+        "Final answer matches the expected answer": "Yes",
+        "Notes opened before submission": "No",
+        "Reminder style": "General reminder"
+      }
+    },
+    {
+      "id": "task-03",
+      "condition": "claim-specific",
+      "initial": "No",
+      "final": "Yes",
+      "notes": false,
+      "facts": {
+        "Answer changed": "Yes \u00b7 changed the choice",
+        "Example": "Task 03",
+        "Final answer matches the expected answer": "No",
+        "Notes opened before submission": "No",
+        "Reminder style": "Claim-specific message"
+      }
+    }
+  ],
+  "frames": [
+    {
+      "name": "task-01-initial",
+      "capture": "full page, no clipping",
+      "sha256": "f2a5beaf3d0e918f13b963ae61fd15c20f964fef7c4bed1a8bfe1cbc92423406"
+    },
+    {
+      "name": "task-01-decision",
+      "capture": "full page, no clipping",
+      "sha256": "54562bf63e1ca3cdd0fe633353a8f4f595375d2a714140de6ea4eaade8fb411d"
+    },
+    {
+      "name": "task-01-review",
+      "capture": "full page, no clipping",
+      "sha256": "da2d7ee5de928ebbb71a3f31d503c044820b427f33e45af5a3cb7c32c267d7f0"
+    },
+    {
+      "name": "task-02-initial",
+      "capture": "full page, no clipping",
+      "sha256": "4116032c864bf35a24fd3823f8b7828cb4a75f654469f4a04b7e6ee70d429278"
+    },
+    {
+      "name": "task-02-decision",
+      "capture": "full page, no clipping",
+      "sha256": "77e3cc7031ed08ead05ae2dac65ba074a5fb8b0fd8cb9e89485b788ded919dcc"
+    },
+    {
+      "name": "task-02-review",
+      "capture": "full page, no clipping",
+      "sha256": "494abca523164dabc832dc89de434af0e1a6ca0fdd54157f4e3189732fd7c729"
+    },
+    {
+      "name": "task-03-initial",
+      "capture": "full page, no clipping",
+      "sha256": "3d500666e8a5b85cd9851cf7fea522e9fe7cc39dc7314d614113b0556b78f81b"
+    },
+    {
+      "name": "task-03-decision",
+      "capture": "full page, no clipping",
+      "sha256": "712f189ce03e30cd391b16945b92e65cc95605720b879803181f2bc3ea3a603a"
+    },
+    {
+      "name": "task-03-review",
+      "capture": "full page, no clipping",
+      "sha256": "116ea791277c576457653b72d98949400d5f396f8d3b0eeda07362ff0df99030"
+    }
+  ],
+  "sourceBuild": "ijAr4oy7tNFaoYTfq13Sh"
+}

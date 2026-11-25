@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>StudyCheck · System diagram and storyboards</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --paper: #fff;
+        --surface: #fff;
+        --ink: #171717;
+        --muted: #555;
+        --line: #d0d0d0;
+        --soft: #f3f3f3;
+        --accent: #333;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --paper: #171717;
+          --surface: #222;
+          --ink: #eee;
+          --muted: #bbb;
+          --line: #555;
+          --soft: #292929;
+          --accent: #ddd;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font:
+          15px/1.65 -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+      }
+      main {
+        max-width: 1220px;
+        margin: auto;
+        padding: 32px 24px 56px;
+      }
+      h1,
+      h2,
+      p,
+      figure {
+        margin: 0;
+      }
+      h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: -0.035em;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 23px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+      .masthead {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 16px;
+        font-size: 13px;
+      }
+      .masthead span,
+      p,
+      figcaption {
+        color: var(--muted);
+      }
+      .intro {
+        margin: 30px 0 24px;
+        max-width: 850px;
+      }
+      .intro p {
+        margin-top: 12px;
+      }
+      .notice {
+        background: var(--soft);
+        border-radius: 0;
+        padding: 14px 18px;
+        margin: 20px 0;
+      }
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 20px;
+        margin: 24px 0 30px;
+      }
+      a {
+        color: var(--accent);
+        text-underline-offset: 4px;
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+      }
+      .architecture h2 {
+        margin-bottom: 8px;
+      }
+      .architecture > p {
+        max-width: 950px;
+        margin-bottom: 18px;
+      }
+      figure img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .diagram,
+      .walkthrough {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 0;
+        overflow: hidden;
+      }
+      figcaption {
+        padding: 10px 14px;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .architecture .explanation {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        font-size: 14px;
+      }
+      .explanation strong {
+        display: block;
+        color: var(--ink);
+        margin-bottom: 5px;
+      }
+      .case {
+        border-top: 1px solid var(--line);
+        padding-top: 30px;
+        margin-top: 36px;
+        scroll-margin-top: 15px;
+      }
+      .case header {
+        margin-bottom: 18px;
+      }
+      .eyebrow {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+      .case header > p:last-child {
+        margin-top: 8px;
+      }
+      .limit {
+        margin-top: 14px;
+        font-size: 14px;
+      }
+      .screens {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+        margin-top: 18px;
+        align-items: start;
+      }
+      .screens figure {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        overflow: hidden;
+      }
+      .screens img {
+        background: var(--paper);
+      }
+      details {
+        margin-top: 20px;
+      }
+      summary {
+        cursor: pointer;
+        min-height: 44px;
+        display: list-item;
+        padding: 9px 0;
+        color: var(--accent);
+      }
+      details > p {
+        font-size: 13px;
+      }
+      .sources {
+        border-top: 1px solid var(--line);
+        padding-top: 20px;
+        margin-top: 36px;
+        font-size: 12px;
+      }
+      .sources p + p {
+        margin-top: 8px;
+      }
+      .architecture {
+        scroll-margin-top: 15px;
+      }
+      code {
+        font-size: 0.9em;
+        overflow-wrap: anywhere;
+      }
+      @media (max-width: 700px) {
+        main {
+          padding: 22px 16px 40px;
+        }
+        h1 {
+          font-size: 27px;
+        }
+        .screens,
+        .architecture .explanation {
+          grid-template-columns: 1fr;
+        }
+        .nav {
+          gap: 10px 18px;
+        }
+        .walkthrough,
+        .diagram {
+          overflow: auto;
+        }
+        .walkthrough > a,
+        .diagram > a {
+          display: block;
+          min-width: 680px;
+        }
+        .case header > p:last-child {
+          font-size: 14px;
+        }
+      }
+      @media print {
+        :root {
+          color-scheme: light;
+          --paper: #fff;
+          --surface: #fff;
+          --ink: #18231d;
+          --muted: #4b594f;
+          --line: #bbb;
+          --soft: #f4f5f2;
+          --accent: #333;
+        }
+        main {
+          max-width: none;
+          padding: 0;
+        }
+        body {
+          font-size: 10pt;
+        }
+        .nav,
+        details {
+          display: none;
+        }
+        .architecture,
+        .case {
+          break-before: page;
+          border: 0;
+          margin: 0;
+          padding-top: 14px;
+        }
+        .architecture .explanation {
+          gap: 12px;
+        }
+        .diagram,
+        .walkthrough {
+          break-inside: avoid;
+        }
+        .walkthrough > a,
+        .diagram > a {
+          min-width: 0;
+        }
+        .limit {
+          font-size: 9pt;
+        }
+        .sources {
+          font-size: 8pt;
+        }
+        a {
+          color: inherit;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="masthead">
+        <strong>StudyCheck / IIS A2</strong
+        ><span>Prepared by Hassan Umar Hassan</span>
+      </header>
+      <section class="intro">
+        <h1>How the app works.<br />Three developed interactions.</h1>
+        <p>
+          The diagram maps implemented responsibilities. Numbered screenshot
+          excerpts show actions, responses and feedback through three scripted
+          paths. The full screenshots are retained for inspection.
+        </p>
+        <p class="notice">
+          These are developer demonstrations, not participant findings. Advice
+          and claim flagging are fixed simulations. Hassan's earlier Task 01
+          verification remains his confirmation; these captures are separate
+          developer work.
+        </p>
+      </section>
+      <nav class="nav" aria-label="Figure navigation">
+        <a href="#architecture">System diagram</a
+        ><a href="#task-01">1. Incorrect advice</a
+        ><a href="#task-02">2. Correct advice</a
+        ><a href="#task-03">3. False alarm</a>
+      </nav>
+      <section
+        class="architecture"
+        id="architecture"
+        aria-labelledby="architecture-heading"
+      >
+        <h2 id="architecture-heading">System diagram</h2>
+        <p>
+          Arrows show actions and information flow. The dashed region identifies
+          simulated generation and claim flagging; the surrounding application
+          implements presentation, state transitions and factual recording.
+        </p>
+        <figure class="diagram">
+          <a href="system-architecture.svg" target="_blank" rel="noreferrer"
+            ><img
+              src="system-architecture.svg"
+              alt="StudyCheck: the student exchanges choices and feedback with the interface; local task content and session logic supply advice, notes, state and review. AI advice and claim flags are simulated."
+          /></a>
+          <figcaption>
+            Figure 1. Simplified components and information/control flows. Solid
+            boxes are implemented responsibilities; the dashed inset identifies
+            authored AI simulations.
+            <a href="system-architecture.png">High-resolution PNG</a> ·
+            <a href="system-architecture.svg">Editable SVG</a>. Open the image
+            for full size.
+          </figcaption>
+        </figure>
+        <div class="explanation">
+          <p>
+            <strong>The person stays in control</strong>The student commits an
+            initial answer, may open notes and explicitly submits a final
+            choice. Advice never overwrites the original answer.
+          </p>
+          <p>
+            <strong>The uncertain AI part is simulated</strong>Local content
+            fixes the advice and claim flag. A displayed flag on a supported
+            claim is a false alarm; the app does not run inference or detection.
+          </p>
+          <p>
+            <strong>Feedback uses records and the key</strong>The review shows
+            choices, notes access and task-key comparisons. It cannot establish
+            reading, reasoning, learning or the cause of a change.
+          </p>
+        </div>
+      </section>
+      <section class="case" id="task-01" aria-labelledby="task-01-heading">
+        <header>
+          <p class="eyebrow">Illustrated example 1 · Claim-specific message</p>
+          <h2 id="task-01-heading">Correcting incorrect advice</h2>
+          <p>Initial Yes → AI recommends Yes → final No · Notes opened: Yes.</p>
+        </header>
+        <figure class="walkthrough">
+          <a
+            href="storyboards/annotated/task-01-walkthrough.svg"
+            target="_blank"
+            rel="noreferrer"
+            ><img
+              src="storyboards/annotated/task-01-walkthrough.svg"
+              alt="Five steps showing the independent Yes, advice and warning, opening notes, final No submission and factual review"
+          /></a>
+          <figcaption>
+            Annotated screenshot excerpts, with UI pixels preserved.
+            <a href="storyboards/annotated/task-01-walkthrough.png"
+              >High-resolution PNG</a
+            >
+            ·
+            <a href="storyboards/annotated/task-01-walkthrough.svg"
+              >Editable SVG</a
+            >. Check final report sizing before submission.
+          </figcaption>
+        </figure>
+        <p class="limit">
+          Notes were opened and the answer changed. This does not establish
+          reading, learning or why it changed.
+        </p>
+        <details>
+          <summary>Inspect the 5 full screenshot originals</summary>
+          <p>
+            Captured from the local app. Capture dates are recorded in the
+            metadata. These are the uncropped originals used in the figure; open
+            each image for full size.
+          </p>
+          <div class="screens">
+            <figure>
+              <a
+                href="storyboards/annotated/task-01-initial.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-01-initial.jpg"
+                  alt="task-01 full screenshot: Initial choice, before advice"
+                  loading="lazy"
+              /></a>
+              <figcaption>1. Initial choice, before advice</figcaption>
+            </figure>
+            <figure>
+              <a
+                href="storyboards/annotated/task-01-advice-closed.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-01-advice-closed.jpg"
+                  alt="task-01 full screenshot: Advice with notes still closed"
+                  loading="lazy"
+              /></a>
+              <figcaption>2. Advice with notes still closed</figcaption>
+            </figure>
+            <figure>
+              <a
+                href="storyboards/annotated/task-01-notes-open.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-01-notes-open.jpg"
+                  alt="task-01 full screenshot: Notes opened, before changing the final choice"
+                  loading="lazy"
+              /></a>
+              <figcaption>
+                3. Notes opened, before changing the final choice
+              </figcaption>
+            </figure>
+            <figure>
+              <a
+                href="storyboards/annotated/task-01-final-ready.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-01-final-ready.jpg"
+                  alt="task-01 full screenshot: Final No selected, ready to submit"
+                  loading="lazy"
+              /></a>
+              <figcaption>4. Final No selected, ready to submit</figcaption>
+            </figure>
+            <figure>
+              <a
+                href="storyboards/annotated/task-01-review.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-01-review.jpg"
+                  alt="task-01 full screenshot: Review after explicit submission"
+                  loading="lazy"
+              /></a>
+              <figcaption>5. Review after explicit submission</figcaption>
+            </figure>
+          </div>
+        </details>
+      </section>
+      <section class="case" id="task-02" aria-labelledby="task-02-heading">
+        <header>
+          <p class="eyebrow">Illustrated example 2 · General reminder</p>
+          <h2 id="task-02-heading">Retaining a correct answer</h2>
+          <p>Initial No → AI recommends No → final No · Notes opened: No.</p>
+        </header>
+        <figure class="walkthrough">
+          <a
+            href="storyboards/annotated/task-02-walkthrough.svg"
+            target="_blank"
+            rel="noreferrer"
+            ><img
+              src="storyboards/annotated/task-02-walkthrough.svg"
+              alt="Four steps showing initial No, supported advice and general reminder, submission without notes and factual review"
+          /></a>
+          <figcaption>
+            Annotated screenshot excerpts, with UI pixels preserved.
+            <a href="storyboards/annotated/task-02-walkthrough.png"
+              >High-resolution PNG</a
+            >
+            ·
+            <a href="storyboards/annotated/task-02-walkthrough.svg"
+              >Editable SVG</a
+            >. Check final report sizing before submission.
+          </figcaption>
+        </figure>
+        <p class="limit">
+          The answer stayed correct without opening notes. The baseline uses the
+          same general reminder in both styles.
+        </p>
+        <details>
+          <summary>Inspect the 3 full screenshot originals</summary>
+          <p>
+            Captured from the local app. Capture dates are recorded in the
+            metadata. These are the uncropped originals used in the figure; open
+            each image for full size.
+          </p>
+          <div class="screens">
+            <figure>
+              <a
+                href="storyboards/annotated/task-02-initial.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-02-initial.jpg"
+                  alt="task-02 full screenshot: Initial choice, before advice"
+                  loading="lazy"
+              /></a>
+              <figcaption>1. Initial choice, before advice</figcaption>
+            </figure>
+            <figure>
+              <a
+                href="storyboards/annotated/task-02-decision.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-02-decision.jpg"
+                  alt="task-02 full screenshot: Advice, reminder and final choice ready to submit"
+                  loading="lazy"
+              /></a>
+              <figcaption>
+                2. Advice, reminder and final choice ready to submit
+              </figcaption>
+            </figure>
+            <figure>
+              <a
+                href="storyboards/annotated/task-02-review.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-02-review.jpg"
+                  alt="task-02 full screenshot: Review after explicit submission"
+                  loading="lazy"
+              /></a>
+              <figcaption>3. Review after explicit submission</figcaption>
+            </figure>
+          </div>
+        </details>
+      </section>
+      <section class="case" id="task-03" aria-labelledby="task-03-heading">
+        <header>
+          <p class="eyebrow">Illustrated example 3 · Claim-specific message</p>
+          <h2 id="task-03-heading">A false alarm on a supported claim</h2>
+          <p>Initial No → AI recommends No → final Yes · Notes opened: No.</p>
+        </header>
+        <figure class="walkthrough">
+          <a
+            href="storyboards/annotated/task-03-walkthrough.svg"
+            target="_blank"
+            rel="noreferrer"
+            ><img
+              src="storyboards/annotated/task-03-walkthrough.svg"
+              alt="Four steps showing initial No, a warning on correct advice, a deliberately selected Yes submission and false-alarm review"
+          /></a>
+          <figcaption>
+            Annotated screenshot excerpts, with UI pixels preserved.
+            <a href="storyboards/annotated/task-03-walkthrough.png"
+              >High-resolution PNG</a
+            >
+            ·
+            <a href="storyboards/annotated/task-03-walkthrough.svg"
+              >Editable SVG</a
+            >. Check final report sizing before submission.
+          </figcaption>
+        </figure>
+        <p class="limit">
+          Yes was deliberately selected for this scripted failure path. It does
+          not show that the warning caused an error.
+        </p>
+        <details>
+          <summary>Inspect the 3 full screenshot originals</summary>
+          <p>
+            Captured from the local app. Capture dates are recorded in the
+            metadata. These are the uncropped originals used in the figure; open
+            each image for full size.
+          </p>
+          <div class="screens">
+            <figure>
+              <a
+                href="storyboards/annotated/task-03-initial.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-03-initial.jpg"
+                  alt="task-03 full screenshot: Initial choice, before advice"
+                  loading="lazy"
+              /></a>
+              <figcaption>1. Initial choice, before advice</figcaption>
+            </figure>
+            <figure>
+              <a
+                href="storyboards/annotated/task-03-decision.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-03-decision.jpg"
+                  alt="task-03 full screenshot: Advice, reminder and final choice ready to submit"
+                  loading="lazy"
+              /></a>
+              <figcaption>
+                2. Advice, reminder and final choice ready to submit
+              </figcaption>
+            </figure>
+            <figure>
+              <a
+                href="storyboards/annotated/task-03-review.jpg"
+                target="_blank"
+                rel="noreferrer"
+                ><img
+                  src="storyboards/annotated/task-03-review.jpg"
+                  alt="task-03 full screenshot: Review after explicit submission"
+                  loading="lazy"
+              /></a>
+              <figcaption>3. Review after explicit submission</figcaption>
+            </figure>
+          </div>
+        </details>
+      </section>
+      <footer class="sources">
+        <p>
+          Source inspection: <code>components/study/study-workspace.tsx</code>,
+          <code>study-session.tsx</code>,
+          <code>hooks/use-study-session.ts</code>,
+          <code>lib/study-session.ts</code>, <code>lib/advice-review.ts</code>,
+          <code>content/scenarios.ts</code> and <code>types/study.ts</code>.
+          Application source: commit
+          <code>b2617986c9e092168b9dce3a31fd0081b3e40277</code>; this is the
+          inspected capture version, not a designated submission version.
+        </p>
+        <p>
+          <a href="storyboards/annotated/capture-record.json"
+            >Capture metadata and observed review fields</a
+          >
+          · <a href="task-01.md">Task 01 provenance</a> ·
+          <a href="task-02-03.md">Contrasting-case notes</a>
+        </p>
+        <p>
+          Task 02 has no targeted flag and uses the same general reminder in
+          both styles. These replays of one question do not isolate warning
+          specificity or estimate detector performance. The diagram and
+          screenshot annotations were prepared with Codex assistance and checked
+          against the code and captured screens. Earlier schematic drafts remain
+          in the project as development history, not the primary report figures.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
