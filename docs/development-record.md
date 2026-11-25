@@ -2,6 +2,7 @@
 
 ## Student decisions and checks
 
+- **Frontend layout.** Hassan designed the frontend layout and directed revisions. Codex helped implement the prototype and ran the developer checks. See [frontend contribution](#25-november-2026-frontend-design-and-implementation-credit).
 - **Task 01.** Hassan approved the interaction flow and confirmed Task 01 after it was developed. Codex separately checked the additional scenarios and both reminder styles. See [Task 01 confirmation](#19-november-2026-hassan-confirmed-task-01-verification) and [contrasting examples](#19-november-2026-contrasting-examples-implemented).
 - **Interface revision.** Hassan reported the editor diagnostics and asked to use the usual Next.js font setup. Codex reproduced the diagnostics, revised the focus and font implementation, and checked keyboard focus across the interaction. See [editor diagnostics](#19-november-2026-editor-diagnostics-and-typography) and [font setup](#19-november-2026-simpler-font-and-editor-setup).
 - **Report review.** Hassan challenged the draft's description of Codex as merely assisting. The report and README were revised to name what Codex generated, what Hassan decided and the checks each carried out. See [authorship clarification](#24-november-2026-explicit-authorship-and-final-format-clarification).
@@ -215,3 +216,7 @@
 
 - Hassan questioned whether the README needed the final paragraph naming his other projects and the icon. Removed that paragraph: no business code or assets were copied, and the general pattern/reference review is already development history. The original folded-page/check icon was generated with Codex; that provenance is retained here alongside the existing icon creation/check entry. The main AI-production acknowledgement and lecture/source attribution remain unchanged.
 - README prose count is now 928. This changes two documentation files only; the application, figures and report text remain unchanged. The currently exported report identifies commit 68cc918, so any final documentation commit/push should be verified and the report's frozen README/development-record/version links refreshed before submission. Batch that refresh after the pending rubric review rather than claim the current public snapshot already contains this removal.
+
+## 25 November 2026: frontend design and implementation credit
+
+- Hassan clarified that he designed the frontend layout. The acknowledgement in the README and report credits him for that work, his A1 direction, feedback, Task 01 confirmation and report review. It records Codex’s help with implementation, including generated code and tests, visual evidence, drafting and developer verification. The README prose count is 927.
